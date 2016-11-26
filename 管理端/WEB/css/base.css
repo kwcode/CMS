@@ -1,0 +1,29 @@
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, i { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+body { }
+table { border-collapse: collapse; border-spacing: 0; }
+caption, th, td, b, strong { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+a img { border: none; }
+em, cite { font-style: normal; }
+body { background: #fff; font: 12px/1.5 Tahoma; color: #000; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; color: #111; }
+a { text-decoration: none; cursor: pointer; }
+dl, dt, dd, ol, ul, li { list-style: none; }
+.left { float: left; }
+.right { float: right; }
+.ue-clear:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix:after { content: "."; display: block; visibility: hidden; clear: both; height: 0; font-size: 0; }
+* html .clearfix { height: 1%; }
+/*.clearfix { display: block; }
+.clearfix { display: inline-block; }*/
+.ue-clear:after { content: "."; display: block; visibility: hidden; clear: both; height: 0; font-size: 0; }
+* html .ue-clear { height: 1%; }
+.ue-clear { display: inline-block; }
+.ue-clear { display: block; }
+.blue { color: blue; }
+.red { color: red; }
+
+.g-div-e { padding: 1px; }
