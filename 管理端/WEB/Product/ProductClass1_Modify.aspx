@@ -6,10 +6,10 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>修改</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/common.js?v=2"></script>
-    <script src="../js/layer/layer.js"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/common.js?v=2"></script>
+    <script src="/js/layer/layer.js"></script>
     <script> 
     </script>
 </head>
@@ -21,7 +21,7 @@
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow(true)">
-                        <img src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
             </div>

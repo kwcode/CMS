@@ -5,10 +5,10 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>新增</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/common.js?v=1"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/common.js?v=1"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +18,7 @@
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow(true)">
-                        <img src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
             </div>
@@ -30,7 +30,8 @@
                 <tr>
                     <td class="alignright">一类>二类：</td>
                     <td>
-                        <asp:DropDownList runat="server" ID="ddlProductClass1" AutoPostBack="true" OnSelectedIndexChanged="ddlProductClass1_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList runat="server" ID="ddlProductClass1" AutoPostBack="true" 
+                            OnSelectedIndexChanged="ddlProductClass1_SelectedIndexChanged"></asp:DropDownList>
                         <select runat="server" id="ddlProductClass2"></select>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="red"
                             ControlToValidate="ddlProductClass1" Display="Dynamic"

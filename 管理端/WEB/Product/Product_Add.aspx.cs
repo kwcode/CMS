@@ -84,7 +84,7 @@ namespace WEB.Product
                 {
                     //新增成功则跳转到图片管理
                     //Response.Redirect("ProductImages_List.aspx?ID=" + row_Add);
-                    UICommon.ScriptHelper.ShowAndRedirect(Title + ",保存成功 ", "ProductImages_List.aspx?ID=" + row_Add);
+                    UICommon.ScriptHelper.Alert(Title + ",保存成功 ");
                     ltMsg.Visible = true;
                     ltMsg.Text = Title + ",保存成功！";
                     txtTitle.Value = string.Empty;

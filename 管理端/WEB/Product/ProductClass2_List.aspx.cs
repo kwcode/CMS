@@ -66,7 +66,7 @@ namespace WEB.Product
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
-            sqlWhere.Append(" AND UserID=" + userInfo.ID);
+            sqlWhere.Append(" UserID=" + userInfo.ID);
             if (!string.IsNullOrEmpty(KeyWords))
             {
                 sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");

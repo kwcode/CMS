@@ -6,15 +6,13 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>新增产品</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/jquery-layer.js"></script>
-    <script src="../js/jquery-uploadpop.js"></script>
-    <script src="../js/common.js?v=1"></script>
-
-    <script src="../ueditor1_4_3/ueditor.config.js"></script>
-    <script src="../ueditor1_4_3/ueditor.all.js"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/jquery-uploadpop.js"></script>
+    <script src="/js/common.js?v=1"></script>
+    <script src="/ueditor1_4_3/ueditor.config.js"></script>
+    <script src="/ueditor1_4_3/ueditor.all.js"></script>
 
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
@@ -40,7 +38,7 @@
 
             //给图片赋值
             var imgPath = document.getElementById("<%=this.hide_ImgPath.ClientID%>").value;
-            $("#img").attr("src", imgPath); 
+            $("#img").attr("src", imgPath);
         })
     </script>
 </head>
@@ -52,7 +50,7 @@
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow()">
-                        <img  src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
             </div>
@@ -91,8 +89,8 @@
                 <tr>
                     <td class="alignright">图片：</td>
                     <td>
-                        <img id="img"    style="width: 100px; height: 100px;" onclick="OpenUploadFile()" />
-                        <asp:HiddenField runat="server" ID="hide_ImgPath"   />
+                        <img id="img" style="width: 100px; height: 100px;" onclick="OpenUploadFile()" />
+                        <asp:HiddenField runat="server" ID="hide_ImgPath" />
                     </td>
                 </tr>
                 <tr>
@@ -150,7 +148,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                <%--  <tr>
                     <td></td>
                     <td class="btnbox">
                         <asp:Button Text="确定保存" runat="server" ID="btnSave" CssClass="btn btn-primary" OnClick="btnSave_Click" />
@@ -158,8 +156,15 @@
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
                             ShowSummary="False" />
                     </td>
-                </tr>
+                </tr>--%>
             </table>
+            <div class="boxline"></div>
+            <div class="btnbox2">
+                <asp:Button Text="确定保存" runat="server" ID="btnSave" CssClass="btn btn-primary" OnClick="btnSave_Click" />
+                <a class="btn btn-warning" onclick="CloseWindow()">关闭</a>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+                    ShowSummary="False" />
+            </div>
         </div>
     </form>
 

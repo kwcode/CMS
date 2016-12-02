@@ -37,7 +37,7 @@ namespace WEB.Product
             int index = 0;
             foreach (int item in list)
             {
-                int row_Del = 1;// DAL.ProductDAL.Delete_1(item);
+                int row_Del = DAL.ProductDAL.Delete_1(item);
                 if (row_Del > 0)
                 {
                     index++;
@@ -59,7 +59,7 @@ namespace WEB.Product
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
-            sqlWhere.Append(" AND UserID=" + userInfo.ID);
+            sqlWhere.Append(" UserID=" + userInfo.ID);
             TotalCount = DAL.ProductDAL.GetRecordCount(sqlWhere.ToString());
             List<Model.ProductEntity> productList = DAL.ProductDAL.GetPageList<Model.ProductEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
             gv_List.DataSource = productList;
