@@ -7,7 +7,7 @@ body { font-family: '微软雅黑'; background: #2a83cf; }*/
 #hd .hd-wrap .top-light { position: absolute; width: 346px; height: 54px; background: url(../images/toplight.png); top: 0; left: 0; }
 h1 { float: left; margin: 0px 0 0 24px; width: 246px; height: 54px; /*background:url(../images/logo.png);*/ color: #FFF; font-size: 34px; position: relative; top: 1px; }
 .login-info { float: left; margin: 20px 0 0 23px; height: 18px; }
-.login-info .welcome { float: left; padding-left: 20px;  height: 18px; line-height: 18px; background: url(../images/topuser.png) no-repeat left bottom; font-size: 14px; color: #fff; }
+.login-info .welcome { float: left; padding-left: 20px; height: 18px; line-height: 18px; background: url(../images/topuser.png) no-repeat left bottom; font-size: 14px; color: #fff; }
 .login-info .welcome span { float: left; }
 .login-info .welcome .user-name { float: left; color: #fff; }
 .login-info .login-msg { float: left; margin-left: 22px; }
@@ -20,6 +20,7 @@ h1 { float: left; margin: 0px 0 0 24px; width: 246px; height: 54px; /*background
 .toolbar a.btn-set { width: 80px; padding-left: 46px; background: url(../images/icon09.png) no-repeat left top; color: #fff; font-size: 14px; }
 .toolbar a.home-btn { width: 40px; padding-left: 46px; background: url(../images/home.png) no-repeat left top; color: #fff; font-size: 14px; }
 .toolbar a.quit-btn { width: 39px; background: url(../images/exit.png) no-repeat left top; }
+.toolbar a.preview-btn { width: 40px; padding-left: 46px; background: url(../images/preview.png) no-repeat left top; color: #fff; font-size: 14px; }
 
 /*页面主体*/
 #bd { padding-top: 6px; margin: 0 4px; background: #fff url(../images/centertopbg.png) repeat-x left top; }
@@ -66,7 +67,7 @@ h1 { float: left; margin: 0px 0 0 24px; width: 246px; height: 54px; /*background
 .nav > li.email .nav-header a { background: url(../images/ico06.png) no-repeat left center; }
 .nav > li.system .nav-header a { background: url(../images/ico07.png) no-repeat left center; }
 
-.nav  .nav-header a { background: url(../images/ico03.png) no-repeat left center; }
+.nav .nav-header a { background: url(../images/ico03.png) no-repeat left center; }
 
 /*子导航*/
 .nav > li .subnav { display: none; padding: 6px 0 11px 0; }
