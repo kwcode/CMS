@@ -9,7 +9,7 @@ using UICommon;
 
 namespace WEB.Other
 {
-    public partial class OnlineMessage_List : UICommon.BasePage_PM
+    public partial class FriendShip_List : UICommon.BasePage_PM
     {
         public int PageSize = 15;
         public int PageIndex
@@ -43,7 +43,7 @@ namespace WEB.Other
             int index = 0;
             foreach (int item in list)
             {
-                int row_Del = DAL.OnlineMessageDAL.Delete_1(item);
+                int row_Del = DAL.FriendShipDAL.Delete_1(item);
                 if (row_Del > 0)
                 {
                     index++;
@@ -70,8 +70,8 @@ namespace WEB.Other
             {
                 sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");
             }
-            TotalCount = DAL.OnlineMessageDAL.GetRecordCount(sqlWhere.ToString());
-            List<Model.OnlineMessageEntity> productList = DAL.OnlineMessageDAL.GetPageList<Model.OnlineMessageEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
+            TotalCount = DAL.FriendShipDAL.GetRecordCount(sqlWhere.ToString());
+            List<Model.FriendShipEntity> productList = DAL.FriendShipDAL.GetPageList<Model.FriendShipEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
             gv_List.DataSource = productList;
             gv_List.DataBind();
         }

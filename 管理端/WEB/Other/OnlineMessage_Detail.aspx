@@ -5,10 +5,10 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>在线留言详细信息</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/common.js?v=1"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/common.js?v=1"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +18,7 @@
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow(true)">
-                        <img src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
             </div>
@@ -30,20 +30,49 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="alignright">联系方式：</td>
-                    <td><%=entity.Contacts  %></td>
+                    <td class="alignright">联系人：</td>
+                    <td>
+                        <%=entity.RealName %>
+                    </td>
                 </tr>
+                <%if (!string.IsNullOrEmpty(entity.Email))
+                  {
+                %>
+                <tr>
+                    <td class="alignright">邮箱：</td>
+                    <td><%=entity.Email%></td>
+                </tr>
+                <%
+                  } %>
+                <%if (!string.IsNullOrEmpty(entity.QQ))
+                  {
+                %>
+                <tr>
+                    <td class="alignright">QQ：</td>
+                    <td><%=entity.QQ%></td>
+                </tr>
+                <%
+                  } %>
+                <%if (!string.IsNullOrEmpty(entity.Address))
+                  {
+                %>
+                <tr>
+                    <td class="alignright">联系地址：</td>
+                    <td><%=entity.Address%></td>
+                </tr>
+                <%
+                  } %>
                 <tr>
                     <td class="alignright">IP：</td>
                     <td><%=entity.IP  %></td>
                 </tr>
                 <tr>
                     <td class="alignright">提交时间：</td>
-                    <td><%=entity.CreateTS  %></td>
+                    <td><%=entity.CreateTS.ToString("yyyy-MM-dd HH:mm")%></td>
                 </tr>
                 <tr>
                     <td class="alignright">内容：</td>
-                    <td><%=entity.TxtContent  %></td>
+                    <td><%=entity.TxtContent%></td>
                 </tr>
             </table>
         </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OnlineMessage_List.aspx.cs" Inherits="WEB.Other.OnlineMessage_List" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FriendShip_List.aspx.cs" Inherits="WEB.Other.FriendShip_List" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,10 +16,10 @@
     <div class="g-div-e">
         <div class="t-tool">
             <div class="left">
-                <%--<a class="l-btn" target="_blank" href="Article_Add.aspx"> 
+                <a class="l-btn" onclick="PopShow('FriendShip_Add.aspx',{area: ['500px', '280px']})">
                     <span class="l-btn-icon  icon-add"></span>
                     <span class="l-btn-text">新增</span>
-                </a>--%>
+                </a>
                 <a class="l-btn btn-del" onclick="Del_ChecdList()">
                     <span class="l-btn-icon  icon-remove"></span>
                     <span class="l-btn-text">删除</span>
@@ -54,25 +54,19 @@
                             <input type="hidden" class="hide_id" value='<%#Eval("ID")%>' />
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="标题">
+                    <asp:TemplateField HeaderText="名称">
                         <ItemStyle HorizontalAlign="Left" />
                         <ItemTemplate>
                             <asp:Literal ID="Title" runat="server" Text='<%#Eval("Title")%>'></asp:Literal>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="联系人">
+                    <asp:TemplateField HeaderText="Url">
                         <ItemStyle HorizontalAlign="Left" />
                         <ItemTemplate>
-                            <asp:Literal ID="RealName" runat="server" Text='<%#Eval("RealName")%>'></asp:Literal>
+                            <asp:Literal ID="Url" runat="server" Text='<%#Eval("Url")%>'></asp:Literal>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="联系电话">
-                        <ItemStyle HorizontalAlign="Left" />
-                        <ItemTemplate>
-                            <asp:Literal ID="Phone" runat="server" Text='<%#Eval("Phone")%>'></asp:Literal>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="留言时间">
+                    <asp:TemplateField HeaderText="创建时间" FooterText="创建时间">
                         <ItemStyle HorizontalAlign="Center" Width="120" />
                         <ItemTemplate>
                             <asp:Literal ID="CreateTS" runat="server" Text='<%#Eval("CreateTS","{0:yyyy-MM-dd HH:mm}")%>'></asp:Literal>
@@ -82,9 +76,9 @@
                     <asp:TemplateField HeaderText="操作" FooterText="操作">
                         <ItemStyle HorizontalAlign="Center" Width="100" />
                         <ItemTemplate>
-                            <a class="td-btn" href="OnlineMessage_Detail.aspx?id=<%#Eval("ID")%>" target="_blank">
+                            <a class="l-btn" onclick="PopShow('FriendShip_Modify.aspx?id=<%#Eval("ID")%>',{area: ['500px', '280px']})">
                                 <span class="td-btn-icon  icon-edit"></span>
-                                <span class="td-btn-text">查看详细</span>
+                                <span class="td-btn-text">修改</span>
                             </a>
                         </ItemTemplate>
                     </asp:TemplateField>
