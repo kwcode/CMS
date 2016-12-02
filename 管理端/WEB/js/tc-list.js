@@ -63,9 +63,22 @@ function OnEnter(obj) {
     }
 }
 
-function Search() {
+function Search(parm) {
+    if (!parm) {
+        parm = "";
+    }
     var keywords = $("#txtSearch").val();
-    window.location.href = window.location.pathname + "?keywords=" + encodeURIComponent(keywords);
+    if ($(".selclass1").length > 0) {
+
+        parm += "&class1=" + $(".selclass1").val();
+    }
+
+    if (parm) {
+        window.location.href = window.location.pathname + "?keywords=" + encodeURIComponent(keywords) + parm;
+    }
+    else {
+        window.location.href = window.location.pathname + "?keywords=" + encodeURIComponent(keywords);
+    }
 }
 
 $(function () {
