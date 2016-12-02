@@ -178,7 +178,42 @@ namespace DAL
             }
         }
         #endregion
+        public static string ConvertToString(object o)
+        {
+            try
+            {
+                if (o != DBNull.Value && o != null && o.ToString() != String.Empty)
+                {
+                    return o.ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
 
 
+        #region 转换为可以保持的sql字符串
+
+        public static string ConverToSqlTxt(object o)
+        {
+            try
+            {
+                string str = ConvertToString(o);
+                str = "'" + str.Replace("'", "''") + "'";
+                return str;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
     }
 }

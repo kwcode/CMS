@@ -45,11 +45,16 @@
     <Compile Include="ArticleDAL.cs" />
     <Compile Include="BackgroundMenuClass1DAL.cs" />
     <Compile Include="BackgroundMenuDAL.cs" />
+    <Compile Include="BannerDAL.cs" />
     <Compile Include="BaseDAL.cs" />
     <Compile Include="DALUtil.cs" />
+    <Compile Include="DomainDAL.cs" />
+    <Compile Include="FriendShipDAL.cs" />
     <Compile Include="NewsClass1DAL.cs" />
     <Compile Include="NewsDAL.cs" />
     <Compile Include="OnlineMessageDAL.cs" />
+    <Compile Include="PictureTextClass1DAL.cs" />
+    <Compile Include="PictureTextDAL.cs" />
     <Compile Include="ProductClass1DAL.cs" />
     <Compile Include="ProductClass2DAL.cs" />
     <Compile Include="ProductClass3DAL.cs" />

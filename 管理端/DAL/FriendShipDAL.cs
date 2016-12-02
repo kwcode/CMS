@@ -8,14 +8,14 @@ namespace DAL
 {
     /// <summary>
     /// Create By Tool :TCode
-    /// Create Time:2016-11-25 00:29
+    /// Create Time:2016-11-27 18:11
     /// </summary>
-    public class ArticleClass1DAL
+    public class FriendShipDAL
     {
         /// <summary>
         ///表名
         /// <summary>
-        private static string TableName = "ArticleClass1";
+        private static string TableName = "FriendShip";
 
         #region 新增
         /// <summary>
@@ -80,9 +80,9 @@ namespace DAL
         /// <typeparam name="T">返回实体</typeparam>
         /// <param name="SelectIF">需要查询的字段</param>
         /// <param name="pramsWhere">条件集合</param>
-        public static T Get1<T>(string SelectIF, SqlParameter[] pramsWhere)
+        public static T Get1<T>(string SelectIF, SqlParameter[] pramsWhere, string OrderName = "")
         {
-            DataTable dt = DBCommon.DBHelper.GetDataTable1(DALUtil.ConnString, TableName, SelectIF, pramsWhere);
+            DataTable dt = DBCommon.DBHelper.GetDataTable1(DALUtil.ConnString, TableName, SelectIF, pramsWhere, OrderName);
             return DALUtil.ConvertDataTableToEntity<T>(dt);
         }
         #endregion
@@ -110,7 +110,7 @@ namespace DAL
         /// <param name="PageSize">数量</param>
         /// <param name="SelectIF">查询字段</param>
         /// <param name="pramsWhere">条件(AND a=1 and b=2)</param>
-        public static List<T> GetPageList<T>(int PageIndex, int PageSize, string SelectIF, string strWhere)
+        public static List<T> GetPageList<T>(int PageIndex, int PageSize, string SelectIF, string strWhere, string OrderName = "ID")
         {
             DataTable dt = DBCommon.DBHelper.GetDataTablePage(DALUtil.ConnString, TableName, SelectIF, PageIndex, PageSize, strWhere, "ID");
             return DALUtil.ConvertDataTableToEntityList<T>(dt);
@@ -140,7 +140,7 @@ namespace DAL
         /// </summary>
         /// <param name="ID">ID</param>
         /// <param name="SelectIF">查询字段</param>
-        public static ArticleClass1Entity Get_99(int ID, string SelectIF)
+        public static FriendShipEntity Get_99(int ID, string SelectIF)
         {
             try
             {
@@ -149,22 +149,7 @@ namespace DAL
 				{
 					DALUtil.MakeInParam("@ID", SqlDbType.Int, 4, ID)
 				};
-                return Get1<ArticleClass1Entity>(SelectIF, pramsWhere);
-            }
-            catch { return null; }
-        }
-
-        public static ArticleClass1Entity Get_98(int ValueNum, int UserID, string SelectIF)
-        {
-            try
-            {
-                //参数Where条件
-                SqlParameter[] pramsWhere =
-				{
-					DALUtil.MakeInParam("@ValueNum", SqlDbType.Int, 4, ValueNum),
-                    DALUtil.MakeInParam("@UserID", SqlDbType.Int, 4, UserID),
-				};
-                return Get1<ArticleClass1Entity>(SelectIF, pramsWhere);
+                return Get1<FriendShipEntity>(SelectIF, pramsWhere);
             }
             catch { return null; }
         }
