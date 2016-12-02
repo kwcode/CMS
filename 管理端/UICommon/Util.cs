@@ -117,6 +117,20 @@ namespace UICommon
         {
             return GetRandString("0123456789", len);
         }
+        public static bool IsNull(object o)
+        {
+            try
+            {
+                string str = ConvertToString(o);
+                return string.IsNullOrEmpty(str);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }
+
