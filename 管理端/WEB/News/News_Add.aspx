@@ -6,15 +6,14 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>新增</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/jquery-layer.js"></script>
-    <script src="../js/jquery-uploadpop.js"></script>
-    <script src="../js/common.js?v=1"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/jquery-uploadpop.js"></script>
+    <script src="/js/common.js?v=1"></script>
 
-    <script src="../ueditor1_4_3/ueditor.config.js"></script>
-    <script src="../ueditor1_4_3/ueditor.all.js"></script>
+    <script src="/ueditor1_4_3/ueditor.config.js"></script>
+    <script src="/ueditor1_4_3/ueditor.all.js"></script>
 
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
@@ -102,7 +101,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                <%--  <tr>
                     <td></td>
                     <td class="btnbox">
                         <asp:Button Text="确定保存" runat="server" ID="btnSave" CssClass="btn btn-primary" OnClick="btnSave_Click" />
@@ -110,8 +109,15 @@
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
                             ShowSummary="False" />
                     </td>
-                </tr>
+                </tr>--%>
             </table>
+            <div class="boxline"></div>
+            <div class="btnbox2">
+                <asp:Button Text="确定保存" runat="server" ID="btnSave" CssClass="btn btn-primary" OnClick="btnSave_Click" />
+                <a class="btn btn-warning" onclick="CloseWindow()">关闭</a>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+                    ShowSummary="False" />
+            </div>
         </div>
     </form>
 
