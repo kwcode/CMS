@@ -5,12 +5,12 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="../css/datagrid.css?v=1" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/jquery-page.js"></script> 
-    <script src="../js/common.js"></script>
-    <script src="../js/tc-list.js"></script>
+    <link href="/css/datagrid.css?v=1" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/jquery-page.js"></script> 
+    <script src="/js/common.js"></script>
+    <script src="/js/tc-list.js"></script>
 </head>
 <body>
     <div class="g-div-e">

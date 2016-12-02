@@ -40,7 +40,7 @@ namespace WEB.Article
         {
             //获取最大的排序id 
             try
-            {
+            { 
                 string Title = UICommon.Util.ConvertToString(txtTitle.Value).Trim();
                 int ArticleClass1_ValueNum = Util.ConvertToInt32(ddlArticleClass1.SelectedValue);
                 string Summay = UICommon.Util.ConvertToString(txtSummay.Value).Trim();

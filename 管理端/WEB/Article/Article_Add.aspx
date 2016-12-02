@@ -7,15 +7,14 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>新增</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/jquery-layer.js"></script>
-    <script src="../js/jquery-uploadpop.js"></script>
-    <script src="../js/common.js?v=1"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script> 
+    <script src="/js/jquery-uploadpop.js"></script>
+    <script src="/js/common.js?v=1"></script>
 
-    <script src="../ueditor1_4_3/ueditor.config.js"></script>
-    <script src="../ueditor1_4_3/ueditor.all.js"></script>
+    <script src="/ueditor1_4_3/ueditor.config.js"></script>
+    <script src="/ueditor1_4_3/ueditor.all.js"></script>
 
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
@@ -53,7 +52,7 @@
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow()">
-                        <img src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
             </div>

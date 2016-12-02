@@ -5,38 +5,39 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>在线留言详细信息</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/common.js?v=1"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/common.js?v=1"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="clearfix ed-title">
+          <%--  <div class="clearfix ed-title">
                 <h3>详细信息
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow(true)">
-                        <img src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
-            </div>
+            </div>--%>
             <table class="ed-table">
                 <tr>
                     <td class="alignright">标题：</td>
                     <td>
                         <%=articleEntity.Title%>
+                        <a class="btn btn-primary" target="_blank" href="Article_Modify.aspx?id=<%=articleEntity.ID%>">点击修改</a>
                     </td>
                 </tr>
-                <tr>
+              <%--  <tr>
                     <td class="alignright">值：</td>
                     <td><%=articleEntity.ValueNum%></td>
                 </tr>
                 <tr>
                     <td class="alignright">排序：</td>
                     <td><%=articleEntity.OrderNum%></td>
-                </tr>
+                </tr>--%>
                 <tr>
                     <td class="alignright">描述：</td>
                     <td><%=articleEntity.Description%></td>
@@ -48,10 +49,6 @@
                 <tr>
                     <td class="alignright">标题图片：</td>
                     <td><%=articleEntity.TitlePictures%></td>
-                </tr>
-                <tr>
-                    <td class="alignright">内容：</td>
-                    <td><%=articleEntity.TxtContent    %></td>
                 </tr>
                 <tr>
                     <td class="alignright">到期时间：</td>

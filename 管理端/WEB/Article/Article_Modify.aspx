@@ -6,13 +6,13 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>修改</title>
-    <link href="../css/edit.css" rel="stylesheet" />
-    <script src="../js/jquery-1.8.3.min.js"></script>
-    <script src="../js/layer/layer.js"></script>
-    <script src="../js/jquery-uploadpop.js"></script>
-    <script src="../js/common.js?v=1"></script>
-    <script src="../ueditor1_4_3/ueditor.config.js"></script>
-    <script src="../ueditor1_4_3/ueditor.all.js"></script>
+    <link href="/css/edit.css" rel="stylesheet" />
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/jquery-uploadpop.js"></script>
+    <script src="/js/common.js?v=1"></script>
+    <script src="/ueditor1_4_3/ueditor.config.js"></script>
+    <script src="/ueditor1_4_3/ueditor.all.js"></script>
 
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
@@ -50,7 +50,7 @@
                 </h3>
                 <div class="close">
                     <a onclick="CloseWindow()">
-                        <img src="../Images/close.gif" />
+                        <img src="/Images/close.gif" />
                     </a>
                 </div>
             </div>
@@ -62,7 +62,14 @@
                 <tr>
                     <td class="alignright">分类：</td>
                     <td>
-                        <asp:DropDownList runat="server" ID="ddlArticleClass1"></asp:DropDownList>
+                        <%--<asp:DropDownList runat="server" ID="ddlArticleClass1"></asp:DropDownList>--%>
+                        <label runat="server" id="lbArticleClass1"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alignright">描述：</td>
+                    <td>
+                        <label runat="server" id="lbDescription"></label>
                     </td>
                 </tr>
                 <tr>
@@ -75,26 +82,7 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td class="alignright">值：</td>
-                    <td>
-                        <input type="text" runat="server" id="txtValueNum" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="red"
-                            ControlToValidate="txtValueNum" Display="Dynamic"
-                            ErrorMessage="值不能为空" SetFocusOnError="True">值不能为空</asp:RequiredFieldValidator>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="alignright">排序：</td>
-                    <td>
-                        <input type="text" runat="server" id="txtOrderNum" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="red"
-                            ControlToValidate="txtOrderNum" Display="Dynamic"
-                            ErrorMessage="排序不能为空" SetFocusOnError="True">排序不能为空</asp:RequiredFieldValidator>
-
-                    </td>
-                </tr>
                 <tr>
                     <td class="alignright">图片：</td>
                     <td>
@@ -109,12 +97,7 @@
                         <textarea runat="server" id="txtSummay"></textarea>
                     </td>
                 </tr>
-                <tr>
-                    <td class="alignright">描述：</td>
-                    <td>
-                        <textarea runat="server" id="txtDescription"></textarea>
-                    </td>
-                </tr>
+
                 <tr>
                     <td class="alignright">内容：</td>
                     <td>
@@ -125,17 +108,14 @@
                         <asp:HiddenField ID="hide_Content" Value="" runat="server" />
                     </td>
                 </tr>
-
-                <tr>
-                    <td></td>
-                    <td class="btnbox">
-                        <asp:Button Text="确定保存" runat="server" ID="btnSave" CssClass="btn btn-primary" OnClick="btnSave_Click" />
-                        <a class="btn btn-warning" onclick="CloseWindow()">关闭</a>
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
-                            ShowSummary="False" />
-                    </td>
-                </tr>
             </table>
+            <div class="boxline"></div>
+            <div class="btnbox2">
+                <asp:Button Text="确定保存" runat="server" ID="btnSave" CssClass="btn btn-primary" OnClick="btnSave_Click" />
+                <a class="btn btn-warning" onclick="CloseWindow()">关闭</a>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+                    ShowSummary="False" />
+            </div>
         </div>
     </form>
 
