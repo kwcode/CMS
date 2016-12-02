@@ -19,7 +19,7 @@ namespace WEB.WebImgUpload
                     FileInfo fileInfo = new FileInfo(file.PostedFile.FileName);
                     string extension = System.IO.Path.GetExtension(fileInfo.Name);
                     string fileName = UICommon.Util.GetRandNumber(15) + extension;
-                    string FilePath = UICommon.FileHelper.GetFilePath(userInfo.ID, UICommon.FileNameIndex.TitlePictures, fileName);
+                    string FilePath = UICommon.FileHelper.GetFilePath(userInfo.ID, UICommon.FileNameIndex.Picture, fileName);
                     string filename = Server.MapPath(FilePath);
                     file.SaveAs(filename);
                     GocParentConfirm(FilePath);

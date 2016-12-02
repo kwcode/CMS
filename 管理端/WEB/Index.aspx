@@ -22,7 +22,7 @@
         <div id="hd">
             <div class="hd-wrap ue-clear">
                 <div class="top-light"></div>
-                <h1 class="logo">后台管理
+                <h1 class="logo"><a href="Index.aspx" style="color: #FFF;">后台管理</a>
                 </h1>
                 <div class="login-info ue-clear">
                     <div class="welcome ue-clear"><span>欢迎您,</span><a href="javascript:;" class="user-name"><%=userInfo.UserName %></a></div>
@@ -32,9 +32,9 @@
                     </div>--%>
                 </div>
                 <div class="toolbar ue-clear">
-                    <a href="javascript:;" data-href="ProjectConfiguration_List.aspx" class="btn-set">基础配置</a>
-                    <a href="index.aspx" class="home-btn">首页</a>
-                    <a href="javascript:;" class="quit-btn exit"></a>
+                    <a href="<%=PreviewAddress %>" target="_blank" class="preview-btn">预览</a>
+                    <a href="/Index.aspx" class="home-btn">首页</a>
+                    <a href="Exit.aspx" class="quit-btn exit"></a>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <%
                   }
               } %>
-           
+
             <%-- <li class="office current">
                 <div class="nav-header">
                     <a href="javascript:;" class="ue-clear"><span>首页管理</span><i class="icon"></i></a>
