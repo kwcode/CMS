@@ -77,6 +77,8 @@
     <Content Include="css\tc-wtbox.css" />
     <Content Include="css\datagrid.css" />
     <Content Include="css\test.css" />
+    <Content Include="Exit.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\A_Image\005.png" />
     <Content Include="Images\A_Image\back.png" />
     <Content Include="Images\A_Image\exit.png" />
@@ -95,6 +97,7 @@
     <Content Include="Images\A_Image\username.png" />
     <Content Include="Images\A_Image\yzm.png" />
     <Content Include="css\A_login.css" />
+    <Content Include="Images\clear.png" />
     <Content Include="Images\close.gif" />
     <Content Include="Images\countbg.png" />
     <Content Include="Images\date.png" />
@@ -105,6 +108,8 @@
     <Content Include="Images\foot01.png" />
     <Content Include="Images\foot02.png" />
     <Content Include="Images\footbg.png" />
+    <Content Include="Images\pencil.png" />
+    <Content Include="Images\preview.png" />
     <Content Include="Images\home.png" />
     <Content Include="Images\ico01.png" />
     <Content Include="Images\ico03.png" />
@@ -115,6 +120,7 @@
     <Content Include="Images\leftjt04.png" />
     <Content Include="Images\more.png" />
     <Content Include="Images\righttitlebig.png" />
+    <Content Include="Images\search.png" />
     <Content Include="Images\titleico.png" />
     <Content Include="Images\topbg.png" />
     <Content Include="Images\toplight.png" />
@@ -152,9 +158,17 @@
     <Content Include="News\News_Add.aspx" />
     <Content Include="News\News_List.aspx" />
     <Content Include="News\News_Modify.aspx" />
+    <Content Include="Other\Banner_List.aspx" />
+    <Content Include="Other\Banner_Modify.aspx" />
+    <Content Include="Other\FriendShip_Add.aspx" />
+    <Content Include="Other\FriendShip_List.aspx" />
+    <Content Include="Other\FriendShip_Modify.aspx" />
     <Content Include="Other\OnlineMessage_Detail.aspx" />
     <Content Include="Other\OnlineMessage_List.aspx" />
     <Content Include="PictureText\Logo.aspx" />
+    <Content Include="PictureText\PictureText_List.aspx" />
+    <Content Include="PictureText\PictureText_Add.aspx" />
+    <Content Include="PictureText\PictureText_Modify.aspx" />
     <Content Include="Product\ProductClass1_Add.aspx" />
     <Content Include="Product\ProductClass1_List.aspx" />
     <Content Include="Product\ProductClass1_Modify.aspx" />
@@ -332,9 +346,6 @@
     <Content Include="ueditor1_4_3\lang\zh-cn\images\music.png" />
     <Content Include="ueditor1_4_3\lang\zh-cn\images\upload.png" />
     <Content Include="ueditor1_4_3\lang\zh-cn\zh-cn.js" />
-    <Content Include="ueditor1_4_3\net\Bin\Newtonsoft.Json.dll" />
-    <Content Include="ueditor1_4_3\net\Bin\Newtonsoft.Json.pdb" />
-    <Content Include="ueditor1_4_3\net\Bin\Newtonsoft.Json.xml" />
     <Content Include="ueditor1_4_3\net\net.sln" />
     <Content Include="ueditor1_4_3\themes\default\css\ueditor.css" />
     <Content Include="ueditor1_4_3\themes\default\css\ueditor.min.css" />
@@ -443,6 +454,24 @@
     <Content Include="ValidateCode.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebImgUpload\UploadPop1.aspx" />
+    <Content Include="Case\CaseClass1_Add.aspx" />
+    <Content Include="Case\CaseClass1_List.aspx" />
+    <Content Include="Case\CaseClass1_Modify.aspx" />
+    <Content Include="Case\Case_Add.aspx" />
+    <Content Include="Case\Case_List.aspx" />
+    <Content Include="Case\Case_Modify.aspx" />
+    <Content Include="Announce\AnnounceClass1_Add.aspx" />
+    <Content Include="Announce\AnnounceClass1_List.aspx" />
+    <Content Include="Announce\AnnounceClass1_Modify.aspx" />
+    <Content Include="Announce\Announce_Add.aspx" />
+    <Content Include="Announce\Announce_List.aspx" />
+    <Content Include="Announce\Announce_Modify.aspx" />
+    <Content Include="Solution\SolutionClass1_Add.aspx" />
+    <Content Include="Solution\SolutionClass1_List.aspx" />
+    <Content Include="Solution\SolutionClass1_Modify.aspx" />
+    <Content Include="Solution\Solution_Add.aspx" />
+    <Content Include="Solution\Solution_List.aspx" />
+    <Content Include="Solution\Solution_Modify.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article\ArticleClass1_Add.aspx.cs">
@@ -493,6 +522,13 @@
     </Compile>
     <Compile Include="Article\Detail_ValueNum.aspx.designer.cs">
       <DependentUpon>Detail_ValueNum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exit.aspx.cs">
+      <DependentUpon>Exit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exit.aspx.designer.cs">
+      <DependentUpon>Exit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -550,6 +586,41 @@
     <Compile Include="News\News_Modify.aspx.designer.cs">
       <DependentUpon>News_Modify.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Other\Banner_List.aspx.cs">
+      <DependentUpon>Banner_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\Banner_List.aspx.designer.cs">
+      <DependentUpon>Banner_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\Banner_Modify.aspx.cs">
+      <DependentUpon>Banner_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\Banner_Modify.aspx.designer.cs">
+      <DependentUpon>Banner_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\FriendShip_Add.aspx.cs">
+      <DependentUpon>FriendShip_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\FriendShip_Add.aspx.designer.cs">
+      <DependentUpon>FriendShip_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\FriendShip_List.aspx.cs">
+      <DependentUpon>FriendShip_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\FriendShip_List.aspx.designer.cs">
+      <DependentUpon>FriendShip_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\FriendShip_Modify.aspx.cs">
+      <DependentUpon>FriendShip_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\FriendShip_Modify.aspx.designer.cs">
+      <DependentUpon>FriendShip_Modify.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Other\OnlineMessage_Detail.aspx.cs">
       <DependentUpon>OnlineMessage_Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -570,6 +641,27 @@
     </Compile>
     <Compile Include="PictureText\Logo.aspx.designer.cs">
       <DependentUpon>Logo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PictureText\PictureText_List.aspx.cs">
+      <DependentUpon>PictureText_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PictureText\PictureText_List.aspx.designer.cs">
+      <DependentUpon>PictureText_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PictureText\PictureText_Add.aspx.cs">
+      <DependentUpon>PictureText_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PictureText\PictureText_Add.aspx.designer.cs">
+      <DependentUpon>PictureText_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PictureText\PictureText_Modify.aspx.cs">
+      <DependentUpon>PictureText_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PictureText\PictureText_Modify.aspx.designer.cs">
+      <DependentUpon>PictureText_Modify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product\ProductClass1_Add.aspx.cs">
       <DependentUpon>ProductClass1_Add.aspx</DependentUpon>
@@ -692,6 +784,132 @@
     <Compile Include="WebImgUpload\UploadPop1.aspx.designer.cs">
       <DependentUpon>UploadPop1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Case\CaseClass1_Add.aspx.cs">
+      <DependentUpon>CaseClass1_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Case\CaseClass1_Add.aspx.designer.cs">
+      <DependentUpon>CaseClass1_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Case\CaseClass1_List.aspx.cs">
+      <DependentUpon>CaseClass1_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Case\CaseClass1_List.aspx.designer.cs">
+      <DependentUpon>CaseClass1_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Case\CaseClass1_Modify.aspx.cs">
+      <DependentUpon>CaseClass1_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Case\CaseClass1_Modify.aspx.designer.cs">
+      <DependentUpon>CaseClass1_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Case\Case_Add.aspx.cs">
+      <DependentUpon>Case_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Case\Case_Add.aspx.designer.cs">
+      <DependentUpon>Case_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Case\Case_List.aspx.cs">
+      <DependentUpon>Case_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Case\Case_List.aspx.designer.cs">
+      <DependentUpon>Case_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Case\Case_Modify.aspx.cs">
+      <DependentUpon>Case_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Case\Case_Modify.aspx.designer.cs">
+      <DependentUpon>Case_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Announce\AnnounceClass1_Add.aspx.cs">
+      <DependentUpon>AnnounceClass1_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Announce\AnnounceClass1_Add.aspx.designer.cs">
+      <DependentUpon>AnnounceClass1_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Announce\AnnounceClass1_List.aspx.cs">
+      <DependentUpon>AnnounceClass1_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Announce\AnnounceClass1_List.aspx.designer.cs">
+      <DependentUpon>AnnounceClass1_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Announce\AnnounceClass1_Modify.aspx.cs">
+      <DependentUpon>AnnounceClass1_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Announce\AnnounceClass1_Modify.aspx.designer.cs">
+      <DependentUpon>AnnounceClass1_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Announce\Announce_Add.aspx.cs">
+      <DependentUpon>Announce_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Announce\Announce_Add.aspx.designer.cs">
+      <DependentUpon>Announce_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Announce\Announce_List.aspx.cs">
+      <DependentUpon>Announce_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Announce\Announce_List.aspx.designer.cs">
+      <DependentUpon>Announce_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Announce\Announce_Modify.aspx.cs">
+      <DependentUpon>Announce_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Announce\Announce_Modify.aspx.designer.cs">
+      <DependentUpon>Announce_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution\SolutionClass1_Add.aspx.cs">
+      <DependentUpon>SolutionClass1_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solution\SolutionClass1_Add.aspx.designer.cs">
+      <DependentUpon>SolutionClass1_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution\SolutionClass1_List.aspx.cs">
+      <DependentUpon>SolutionClass1_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solution\SolutionClass1_List.aspx.designer.cs">
+      <DependentUpon>SolutionClass1_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution\SolutionClass1_Modify.aspx.cs">
+      <DependentUpon>SolutionClass1_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solution\SolutionClass1_Modify.aspx.designer.cs">
+      <DependentUpon>SolutionClass1_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution\Solution_Add.aspx.cs">
+      <DependentUpon>Solution_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solution\Solution_Add.aspx.designer.cs">
+      <DependentUpon>Solution_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution\Solution_List.aspx.cs">
+      <DependentUpon>Solution_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solution\Solution_List.aspx.designer.cs">
+      <DependentUpon>Solution_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution\Solution_Modify.aspx.cs">
+      <DependentUpon>Solution_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solution\Solution_Modify.aspx.designer.cs">
+      <DependentUpon>Solution_Modify.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ueditor1_4_3\net\config.json" />
@@ -703,6 +921,7 @@
     <Content Include="ueditor1_4_3\third-party\video-js\font\vjs.svg" />
     <Content Include="ueditor1_4_3\third-party\video-js\font\vjs.ttf" />
     <Content Include="ueditor1_4_3\third-party\video-js\font\vjs.woff" />
+    <None Include="Properties\PublishProfiles\GL.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
