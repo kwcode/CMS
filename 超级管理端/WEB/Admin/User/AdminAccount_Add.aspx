@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuperAdministrator_Modify.aspx.cs" Inherits="WEB.Admin.SuperAdministrator.SuperAdministrator_Modify" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminAccount_Add.aspx.cs" Inherits="WEB.Admin.User.AdminAccount_Add" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>修改用户</title>
+    <title>新增用户</title>
     <link href="/css/edit.css" rel="stylesheet" />
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/layer/layer.js"></script>
@@ -22,21 +22,14 @@
                     </a>
                 </div>
             </div>--%>
-
             <table class="ed-table">
                 <tr>
-                    <td class="alignright2">账号：</td>
+                    <td class="alignright2">登录账号：</td>
                     <td>
-                        <asp:Label runat="server" ID="txtLoginName"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="alignright2">昵称：</td>
-                    <td>
-                        <input type="text" runat="server" id="txtNickName" />
+                        <input type="text" runat="server" id="txtLoginName" />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="red"
-                            ControlToValidate="txtNickName" Display="Dynamic"
-                            ErrorMessage="昵称不能为空" SetFocusOnError="True">昵称不能为空</asp:RequiredFieldValidator>
+                            ControlToValidate="txtLoginName" Display="Dynamic"
+                            ErrorMessage="账号不能为空" SetFocusOnError="True">账号不能为空</asp:RequiredFieldValidator>
 
                     </td>
                 </tr>

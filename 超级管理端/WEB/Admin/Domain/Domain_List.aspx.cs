@@ -12,15 +12,14 @@ namespace WEB.Admin.Domain
 {
     public partial class Domain_List : UICommon.BasePage_Admin
     {
-        public int UserID
-        {
-            get
-            {
-                int UserID = UICommon.Util.ConvertToInt32(Request["UserID"]);
-                return UserID > 0 ? UserID : 1;
-            }
-        }
-
+        //public int UserID
+        //{
+        //    get
+        //    {
+        //        int UserID = UICommon.Util.ConvertToInt32(Request["UserID"]);
+        //        return UserID > 0 ? UserID : 1;
+        //    }
+        //} 
         public string KeyWords
         {
             get
@@ -65,12 +64,12 @@ namespace WEB.Admin.Domain
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
-            sqlWhere.Append(" UserID=" + UserID);
+            sqlWhere.Append(" 1=1 ");
             if (!string.IsNullOrEmpty(KeyWords))
             {
                 sqlWhere.Append(" AND DomainName  Like '%" + KeyWords + "%'");
             }
-            List<Model.DomainEntity> entityList = DAL.DomainDAL.GetList2<Model.DomainEntity>("*", sqlWhere.ToString());
+            List<Model.DomainEntity> entityList = DAL.DomainDAL.GetList2<Model.DomainEntity>("*", sqlWhere.ToString(), "CreateTS DESC");
             gv_List.DataSource = entityList;
             gv_List.DataBind();
         }

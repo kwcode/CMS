@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuperAdministrator_Modify.aspx.cs" Inherits="WEB.Admin.SuperAdministrator.SuperAdministrator_Modify" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Password_Modify.aspx.cs" Inherits="WEB.Admin.User.Password_Modify" %>
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,28 +26,9 @@
 
             <table class="ed-table">
                 <tr>
-                    <td class="alignright2">账号：</td>
-                    <td>
-                        <asp:Label runat="server" ID="txtLoginName"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="alignright2">昵称：</td>
-                    <td>
-                        <input type="text" runat="server" id="txtNickName" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="red"
-                            ControlToValidate="txtNickName" Display="Dynamic"
-                            ErrorMessage="昵称不能为空" SetFocusOnError="True">昵称不能为空</asp:RequiredFieldValidator>
-
-                    </td>
-                </tr>
-                <tr>
                     <td class="alignright2">密码：</td>
                     <td>
                         <input type="text" runat="server" id="txtPassword" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="red"
-                            ControlToValidate="txtPassword" Display="Dynamic"
-                            ErrorMessage="密码不能为空" SetFocusOnError="True">密码不能为空</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -59,8 +41,8 @@
                     </td>
                 </tr>
             </table>
-            <div class="clearfix green">
-                <asp:Literal ID="ltMsg" Visible="false" runat="server">保存成功</asp:Literal>
+            <div class="clearfix">
+                <asp:Label CssClass="green" ID="ltMsg" Visible="false" runat="server">保存成功</asp:Label>
             </div>
         </div>
     </form>

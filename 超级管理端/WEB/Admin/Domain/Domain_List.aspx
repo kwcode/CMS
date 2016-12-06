@@ -16,7 +16,7 @@
     <div class="g-div-e">
         <div class="t-tool">
             <div class="left">
-                <a class="l-btn" onclick="PopShow('UserInfo_Add.aspx',{area: ['500px', '300px']})">
+                <a class="l-btn" onclick="PopShow('Domain_Add.aspx',{area: ['500px', '300px']})">
                     <span class="l-btn-icon  icon-add"></span>
                     <span class="l-btn-text">新增</span>
                 </a>
@@ -28,7 +28,7 @@
             <div class="right" style="margin-right: 20px; padding: 0px 10px;">
                 <div class="searchbox clearfix">
                     <input type="text" class="inpt-search" value="<%=KeyWords%>" onkeydown="OnEnter(this)" id="txtSearch" />
-                    <a class="btn-search" onclick="Search('&UserID=<%=UserID%>')">
+                    <a class="btn-search" onclick="Search()">
                         <span class="s-icon"></span>
                         <span class="s-text">搜索</span>
                     </a>
@@ -85,25 +85,13 @@
                     <asp:TemplateField HeaderText="操作">
                         <ItemStyle HorizontalAlign="Center" Width="200" />
                         <ItemTemplate>
-                            <a class="td-btn" onclick="PopShow('UserInfo_Modify.aspx?id=<%#Eval("ID")%>',{area: ['500px', '300px']})">
+                            <a class="td-btn" onclick="PopShow('Domain_Modify.aspx?id=<%#Eval("ID")%>',{area: ['500px', '300px']})">
                                 <span class="td-btn-icon  icon-edit"></span>
                                 <span class="td-btn-text">修改</span>
-                            </a>
-                            <a class="td-btn" href="/GL/AdminToGL.aspx?UserID=<%#Eval("ID")%>" target="_blank">
-                                <span class="td-btn-icon  icon-edit"></span>
-                                <span class="td-btn-text">域名</span>
-                            </a>
-                            <a class="td-btn" href="/GL/AdminToGL.aspx?UserID=<%#Eval("ID")%>" target="_blank">
-                                <span class="td-btn-icon  icon-edit"></span>
-                                <span class="td-btn-text">密码</span>
-                            </a>
+                            </a> 
                             <a class="td-btn" href="/GL/AdminToGL.aspx?UserID=<%#Eval("ID")%>" target="_blank">
                                 <span class="td-btn-icon  icon-user"></span>
                                 <span class="td-btn-text">配置</span>
-                            </a>
-                            <a class="td-btn" href="/GL/AdminToGL.aspx?UserID=<%#Eval("ID")%>" target="_blank">
-                                <span class="td-btn-icon  icon-user"></span>
-                                <span class="td-btn-text">管理</span>
                             </a>
                         </ItemTemplate>
                     </asp:TemplateField>

@@ -66,12 +66,13 @@ namespace WEB.Admin.Template
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
+            sqlWhere.Append("1=1");
             if (!string.IsNullOrEmpty(KeyWords))
             {
                 sqlWhere.Append(" AND Name Like '%" + KeyWords + "%'");
             }
             TotalCount = DAL.TemplatesDAL.GetRecordCount(sqlWhere.ToString());
-            List<Model.TemplatesEntity> productList = DAL.TemplatesDAL.GetPageList<Model.TemplatesEntity>(PageIndex, PageSize, "*", sqlWhere.ToString(),"OrderNum");
+            List<Model.TemplatesEntity> productList = DAL.TemplatesDAL.GetPageList<Model.TemplatesEntity>(PageIndex, PageSize, "*", sqlWhere.ToString(), "OrderNum");
             gv_List.DataSource = productList;
             gv_List.DataBind();
         }

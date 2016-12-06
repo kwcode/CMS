@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WEB.Admin.SuperAdministrator {
+namespace WEB.Admin.User {
     
     
-    public partial class SuperAdministrator_List {
+    public partial class AdminAccount_List {
         
         /// <summary>
         /// Head1 控件。

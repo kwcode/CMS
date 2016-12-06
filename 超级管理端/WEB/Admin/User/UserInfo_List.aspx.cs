@@ -12,7 +12,7 @@ using UICommon;
 
 namespace WEB.Admin.User
 {
-    public partial class UserInfo_List : UICommon.BasePage_PM
+    public partial class UserInfo_List : UICommon.BasePage_Admin
     {
         public int PageSize = 15;
         public int PageIndex
@@ -68,6 +68,7 @@ namespace WEB.Admin.User
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
+            sqlWhere.Append(" 1=1 ");
             if (!string.IsNullOrEmpty(KeyWords))
             {
                 sqlWhere.Append(" AND UserName  Like '%" + KeyWords + "%'");
@@ -88,7 +89,7 @@ namespace WEB.Admin.User
                 Literal ltTemplates_ValueNum = e.Row.FindControl("ltTemplates_ValueNum") as Literal;
                 if (ltTemplates_ValueNum != null)
                 {
-                    int  Templates_ValueNum = Util.ConvertToInt32(ltTemplates_ValueNum.Text);
+                    int Templates_ValueNum = Util.ConvertToInt32(ltTemplates_ValueNum.Text);
                     SqlParameter[] pramsWhere =
                     { 
                         DAL.DALUtil.MakeInParam("@ValueNum",System.Data.SqlDbType.Int,4,Templates_ValueNum),

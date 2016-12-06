@@ -5,10 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UICommon;
 
 namespace WEB.Admin.User
 {
-    public partial class UserInfo_Modify : System.Web.UI.Page
+    public partial class UserInfo_Modify : BasePage_Admin
     {
         public int ID
         {

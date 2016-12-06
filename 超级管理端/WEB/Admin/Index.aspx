@@ -34,7 +34,7 @@
                 <div class="toolbar ue-clear">
                     <%--<a href="javascript:;" data-href="ProjectConfiguration_List.aspx" class="btn-set">基础配置</a>
                     <a href="index.aspx" class="home-btn">首页</a>--%>
-                    <a href="javascript:;" class="quit-btn exit"></a>
+                    <a href="Exit.aspx" class="quit-btn exit"></a>
                 </div>
             </div>
         </div>
@@ -42,20 +42,18 @@
     <!--中间-->
     <div data-options="region:'west',split:true,title:'功能导航'" style="width: 190px;">
         <ul class="nav">
-
-            <li class="office current">
+            <%-- <li class="office current">
                 <div class="nav-header">
                     <a href="javascript:;" class="ue-clear" date-src="/Admin/User/UserInfo_List.aspx"><span>用户管理</span><i class="icon"></i></a>
                 </div>
-            </li>
-
-            <li class="office current">
+            </li>--%>
+            <li class="office">
                 <div class="nav-header">
                     <a href="javascript:;" class="ue-clear"><span>用户管理</span><i class="icon"></i></a>
                 </div>
                 <ul class="subnav">
                     <li><a href="javascript:;" date-src="/Admin/User/UserInfo_List.aspx">用户信息</a></li>
-                    <li><a href="javascript:;" date-src="/Admin/User/UserInfo_List.aspx">域名配置</a></li>
+                    <li><a href="javascript:;" date-src="/Admin/Domain/Domain_List.aspx">域名配置</a></li>
                 </ul>
             </li>
             <li class="nav-info">
@@ -64,11 +62,12 @@
                         <span>配置</span><i class="icon"></i></a>
                 </div>
                 <ul class="subnav">
-                    <li><a href="javascript:;" date-src="Template/Templates_List.aspx">模板配置</a></li>
+                    <li><a href="javascript:;" date-src="Template/Templates_List.aspx">模板配置</a></li> 
+                    <li><a href="javascript:;" date-src="BackSectionsSet/BackSectionsSet_List.aspx">基础栏目配置</a></li>
                 </ul>
             </li>
 
-            <li class="nav-info">
+            <%-- <li class="nav-info">
                 <div class="nav-header">
                     <a href="javascript:;" class="ue-clear">
                         <span>产品管理</span><i class="icon"></i></a>
@@ -76,7 +75,7 @@
                 <ul class="subnav">
                     <li><a href="javascript:;" date-src="/Product/Product_List.aspx">产品管理</a></li>
                 </ul>
-            </li>
+            </li>--%>
 
             <li class="nav-info">
                 <div class="nav-header">
@@ -84,7 +83,7 @@
                         <i class="icon"></i></a>
                 </div>
                 <ul class="subnav">
-                    <li><a href="javascript:;" date-src="/SuperAdministrator/SuperAdministrator_List.aspx">账号管理</a></li>
+                    <li><a href="javascript:;" date-src="SuperAdministrator/SuperAdministrator_List.aspx">账号管理</a></li>
                 </ul>
             </li>
         </ul>

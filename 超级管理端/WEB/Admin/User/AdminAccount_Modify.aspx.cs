@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WEB.Admin.SuperAdministrator
+namespace WEB.Admin.User
 {
-    public partial class SuperAdministrator_Modify : UICommon.BasePage_Admin
+    public partial class AdminAccount_Modify : UICommon.BasePage_Admin
     {
         public int ID
         {
@@ -21,9 +21,7 @@ namespace WEB.Admin.SuperAdministrator
         {
             if (!IsPostBack)
             {
-                Model.SuperAdministratorEntity entity = DAL.SuperAdministratorDAL.Get_99(ID, "*");
-                txtLoginName.Text = entity.LoginName;
-                txtNickName.Value = entity.NickName;
+
             }
         }
 
@@ -31,19 +29,17 @@ namespace WEB.Admin.SuperAdministrator
         {
             try
             {
-                string NickName = txtNickName.Value.Trim();
                 string password = txtPassword.Value.Trim();
                 string md5Password = UICommon.SecurityHelper.MD5Encrypt(password);
-                List<SqlParameter> pramsModifyList = new List<SqlParameter>();
-                if (!string.IsNullOrEmpty(password))
-                {
-                    pramsModifyList.Add(DAL.DALUtil.MakeInParam("@Password", System.Data.SqlDbType.NVarChar, 200, md5Password));
-                }
-                pramsModifyList.Add(DAL.DALUtil.MakeInParam("@NickName", System.Data.SqlDbType.NVarChar, 200, NickName));
-
-                int row_Mod = DAL.SuperAdministratorDAL.Modify(pramsModifyList.ToArray(), ID);
+                SqlParameter[] pramsModify =
+                    {
+                      DAL.DALUtil.MakeInParam("@Password",System.Data.SqlDbType.NVarChar,200,md5Password),   
+                    };
+                int row_Mod = DAL.AdminAccountDAL.Modify(pramsModify, ID);
                 if (row_Mod > 0)
                 {
+                    ltMsg.Visible = true;
+                    ltMsg.Text = "密码:" + password;
                     UICommon.ScriptHelper.Alert("修改成功！");
                 }
                 else

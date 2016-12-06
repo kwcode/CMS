@@ -1,17 +1,16 @@
-﻿using Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UICommon;
-namespace WEB.Admin.SuperAdministrator
+
+
+namespace WEB.Admin.BackSectionsSet
 {
-    public partial class SuperAdministrator_List : UICommon.BasePage_Admin
+    public partial class BackSectionsSet_List : UICommon.BasePage_Admin
     {
         public int PageSize = 15;
         public int PageIndex
@@ -45,7 +44,7 @@ namespace WEB.Admin.SuperAdministrator
             int index = 0;
             foreach (int item in list)
             {
-                int row_Del = DAL.SuperAdministratorDAL.Delete_1(item);
+                int row_Del = DAL.BackSectionsSetDAL.Delete_1(item);
                 if (row_Del > 0)
                 {
                     index++;
@@ -70,11 +69,11 @@ namespace WEB.Admin.SuperAdministrator
             sqlWhere.Append("1=1");
             if (!string.IsNullOrEmpty(KeyWords))
             {
-                sqlWhere.Append(" AND NickName Like '%" + KeyWords + "%'");
+                sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");
             }
-            TotalCount = DAL.SuperAdministratorDAL.GetRecordCount(sqlWhere.ToString());
-            List<Model.SuperAdministratorEntity> entityList = DAL.SuperAdministratorDAL.GetPageList<Model.SuperAdministratorEntity>(PageIndex, PageSize, "*", sqlWhere.ToString(), "ID DESC");
-            gv_List.DataSource = entityList;
+            TotalCount = DAL.BackSectionsSetDAL.GetRecordCount(sqlWhere.ToString());
+            List<Model.BackSectionsSetEntity> productList = DAL.BackSectionsSetDAL.GetPageList<Model.BackSectionsSetEntity>(PageIndex, PageSize, "*", sqlWhere.ToString(), "OrderNum");
+            gv_List.DataSource = productList;
             gv_List.DataBind();
         }
 

@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserInfo_List.aspx.cs" Inherits="WEB.Admin.User.UserInfo_List" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BackSectionsSet_List.aspx.cs" Inherits="WEB.Admin.BackSectionsSet.BackSectionsSet_List" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="/css/datagrid.css?v=2" rel="stylesheet" />
+    <link href="/css/datagrid.css?v=1" rel="stylesheet" />
     <script src="/js/jquery-1.8.3.js"></script>
     <script src="/js/layer/layer.js"></script>
     <script src="/js/jquery-page.js"></script>
@@ -16,7 +16,7 @@
     <div class="g-div-e">
         <div class="t-tool">
             <div class="left">
-                <a class="l-btn" onclick="PopShow('UserInfo_Add.aspx',{area: ['500px', '300px']})">
+                <a class="l-btn" onclick="PopShow('BackSectionsSet_Add.aspx',{area: ['500px', '300px']})">
                     <span class="l-btn-icon  icon-add"></span>
                     <span class="l-btn-text">新增</span>
                 </a>
@@ -36,8 +36,7 @@
             </div>
         </div>
         <form id="form1" runat="server">
-            <asp:GridView ID="gv_List" DataKeyNames="ID" CssClass="m-table" runat="server"
-                AutoGenerateColumns="False" Width="100%" OnRowDataBound="gv_List_RowDataBound">
+            <asp:GridView ID="gv_List" DataKeyNames="ID" CssClass="m-table" runat="server" AutoGenerateColumns="False" Width="100%">
                 <Columns>
                     <asp:TemplateField HeaderText="全选">
                         <ItemStyle HorizontalAlign="Center" Width="50" />
@@ -55,52 +54,45 @@
                             <input type="hidden" class="hide_id" value='<%#Eval("ID")%>' />
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="UserID">
-                        <ItemStyle HorizontalAlign="Left" Width="50" />
+                    <asp:TemplateField HeaderText="标题">
+                        <ItemStyle HorizontalAlign="Left" />
                         <ItemTemplate>
-                            <asp:Literal ID="UserID" runat="server" Text='<%#Eval("ID")%>'></asp:Literal>
+                            <asp:Literal ID="Name" runat="server" Text='<%#Eval("Title")%>'></asp:Literal>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="唯一值">
+                        <ItemStyle HorizontalAlign="Center" Width="100" />
+                        <ItemTemplate>
+                            <asp:Literal ID="ValueNum" runat="server" Text='<%#Eval("ValueNum")%>'></asp:Literal>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="ManageUrl">
+                        <ItemStyle HorizontalAlign="Left" Width="150" />
+                        <ItemTemplate>
+                            <asp:Literal ID="ManageUrl" runat="server" Text='<%#Eval("ManageUrl")%>'></asp:Literal>
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="用户名">
-                        <ItemStyle HorizontalAlign="Left" />
+                    <asp:TemplateField HeaderText="排序">
+                        <ItemStyle HorizontalAlign="Center" Width="50" />
                         <ItemTemplate>
-                            <asp:Literal ID="UserName" runat="server" Text='<%#Eval("UserName")%>'></asp:Literal>
+                            <asp:Literal ID="OrderNum" runat="server" Text='<%#Eval("OrderNum")%>'></asp:Literal>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="到期时间">
-                        <ItemStyle HorizontalAlign="Left" />
+                    <asp:TemplateField HeaderText="描述">
+                        <ItemStyle HorizontalAlign="Left" Width="150" />
                         <ItemTemplate>
-                            <asp:Literal ID="MaturityTime" runat="server" Text='<%#Eval("MaturityTime")%>'></asp:Literal>
+                            <asp:Literal ID="Description" runat="server" Text='<%#Eval("Description")%>'></asp:Literal>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="模板">
-                        <ItemStyle HorizontalAlign="Center" />
-                        <ItemTemplate>
-                            <asp:Literal ID="ltTemplates_ValueNum" runat="server" Text='<%#Eval("Templates_ValueNum")%>'></asp:Literal>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <%--  <asp:TemplateField HeaderText="创建时间">
-                        <ItemStyle HorizontalAlign="Center" Width="120" />
-                        <ItemTemplate>
-                            <asp:Literal ID="AddDate" runat="server" Text='<%#Eval("AddDate","{0:yyyy-MM-dd HH:mm}")%>'></asp:Literal>
-                        </ItemTemplate>
-                    </asp:TemplateField>--%>
-
                     <asp:TemplateField HeaderText="操作">
                         <ItemStyle HorizontalAlign="Center" Width="200" />
                         <ItemTemplate>
-                            <a class="td-btn" onclick="PopShow('UserInfo_Modify.aspx?id=<%#Eval("ID")%>',{area: ['500px', '300px']})">
+                            <a class="td-btn" onclick="PopShow('BackSectionsSet_Modify.aspx?ID=<%#Eval("ID")%>',{area: ['500px', '300px']})">
                                 <span class="td-btn-icon  icon-edit"></span>
                                 <span class="td-btn-text">修改</span>
                             </a>
-                            <a class="td-btn" href="AdminAccount_List.aspx?UserID=<%#Eval("ID")%>" target="_blank"><span class="td-btn-icon  icon-user"></span>
-                                <span class="td-btn-text">账户</span>
-                            </a>
-                            <a class="td-btn" href="/GL/AdminToGL.aspx?UserID=<%#Eval("ID")%>" target="_blank">
-                                <span class="td-btn-icon  icon-cog"></span>
-                                <span class="td-btn-text">配置</span>
-                            </a>
+
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -112,3 +104,4 @@
 
 </body>
 </html>
+

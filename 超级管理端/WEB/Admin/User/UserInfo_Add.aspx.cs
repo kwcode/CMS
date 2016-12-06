@@ -8,17 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace WEB.Admin.User
 {
-    public partial class UserInfo_Add : UICommon.BasePage_PM
+    public partial class UserInfo_Add : UICommon.BasePage_Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //int maxOrder = DAL.ArticleClass1DAL.GetSingle("MAX(OrderNum)");
-                //txtOrderNum.Value = UICommon.Util.ConvertToString(maxOrder + 1);
-                //int maxValue = DAL.ArticleClass1DAL.GetSingle("MAX(ValueNum)", " AND UserID=" + userInfo.ID);
-                //txtValueNum.Value = UICommon.Util.ConvertToString(maxValue + 1);
-
                 //模板集合 
                 List<Model.TemplatesEntity> TemplatesList = DAL.TemplatesDAL.GetList<Model.TemplatesEntity>("*", null, "OrderNum");
                 ddlTemplates.DataSource = TemplatesList;
