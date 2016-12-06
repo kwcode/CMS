@@ -61,9 +61,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\BackSectionsSet\BackSectionsSet_Add.aspx" />
+    <Content Include="Admin\BackSectionsSet\BackSectionsSet_List.aspx" />
+    <Content Include="Admin\BackSectionsSet\BackSectionsSet_Modify.aspx" />
     <Content Include="Admin\Domain\Domain_Add.aspx" />
     <Content Include="Admin\Domain\Domain_List.aspx" />
     <Content Include="Admin\Domain\Domain_Modify.aspx" />
+    <Content Include="Admin\Exit.aspx" />
     <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\Right.aspx" />
     <Content Include="Admin\SuperAdministrator\SuperAdministrator_Add.aspx" />
@@ -72,10 +76,13 @@
     <Content Include="Admin\Template\Templates_Add.aspx" />
     <Content Include="Admin\Template\Templates_List.aspx" />
     <Content Include="Admin\Template\Templates_Modify.aspx" />
+    <Content Include="Admin\User\AdminAccount_Add.aspx" />
+    <Content Include="Admin\User\AdminAccount_List.aspx" />
+    <Content Include="Admin\User\AdminAccount_Modify.aspx" />
+    <Content Include="Admin\User\Password_Modify.aspx" />
     <Content Include="Admin\User\UserInfo_Add.aspx" />
     <Content Include="Admin\User\UserInfo_List.aspx" />
     <Content Include="Admin\User\UserInfo_Modify.aspx" />
-    <Content Include="cog.png" />
     <Content Include="css\admin_index.css" />
     <Content Include="GL\AdminToGL.aspx" />
     <Content Include="GL\Article\ArticleClass1_Add.aspx" />
@@ -105,10 +112,19 @@
     <Content Include="GL\Banner\Banner_Add.aspx" />
     <Content Include="GL\Banner\Banner_List.aspx" />
     <Content Include="GL\Banner\Banner_Modify.aspx" />
+    <Content Include="GL\Domain\Domain_Add.aspx" />
+    <Content Include="GL\Domain\Domain_List.aspx" />
+    <Content Include="GL\Domain\Domain_Modify.aspx" />
+    <Content Include="GL\Exit.aspx" />
+    <Content Include="GL\Fun\CopyTC.aspx" />
     <Content Include="GL\Index.aspx" />
+    <Content Include="GL\PictureText\PictureTextClass1_Add.aspx" />
+    <Content Include="GL\PictureText\PictureTextClass1_List.aspx" />
+    <Content Include="GL\PictureText\PictureTextClass1_Modify.aspx" />
     <Content Include="GL\PictureText\PictureText_List.aspx" />
+    <Content Include="GL\PictureText\PictureText_Add.aspx" />
+    <Content Include="GL\PictureText\PictureText_Modify.aspx" />
     <Content Include="GL\Right.aspx" />
-    <Content Include="group_gear.png" />
     <Content Include="Images\A_Image\005.png" />
     <Content Include="Images\A_Image\back.png" />
     <Content Include="Images\A_Image\exit.png" />
@@ -129,6 +145,7 @@
     <Content Include="css\A_login.css" />
     <Content Include="Images\clear.png" />
     <Content Include="Images\close.gif" />
+    <Content Include="Images\cog.png" />
     <Content Include="Images\countbg.png" />
     <Content Include="Images\date.png" />
     <Content Include="Images\edit_add.png" />
@@ -177,6 +194,7 @@
     <Content Include="js\jquery-1.8.3.min.js" />
     <Content Include="js\jquery-page.js" />
     <Content Include="js\jquery-uploadpop.js" />
+    <Content Include="js\layer\demo.html" />
     <Content Include="js\layer\layer.js" />
     <Content Include="js\layer\skin\default\icon-ext.png" />
     <Content Include="js\layer\skin\default\icon.png" />
@@ -464,6 +482,27 @@
     <Content Include="WebImgUpload\UploadPop1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\BackSectionsSet\BackSectionsSet_Add.aspx.cs">
+      <DependentUpon>BackSectionsSet_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BackSectionsSet\BackSectionsSet_Add.aspx.designer.cs">
+      <DependentUpon>BackSectionsSet_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BackSectionsSet\BackSectionsSet_List.aspx.cs">
+      <DependentUpon>BackSectionsSet_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BackSectionsSet\BackSectionsSet_List.aspx.designer.cs">
+      <DependentUpon>BackSectionsSet_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BackSectionsSet\BackSectionsSet_Modify.aspx.cs">
+      <DependentUpon>BackSectionsSet_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BackSectionsSet\BackSectionsSet_Modify.aspx.designer.cs">
+      <DependentUpon>BackSectionsSet_Modify.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Domain\Domain_Add.aspx.cs">
       <DependentUpon>Domain_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -484,6 +523,13 @@
     </Compile>
     <Compile Include="Admin\Domain\Domain_Modify.aspx.designer.cs">
       <DependentUpon>Domain_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Exit.aspx.cs">
+      <DependentUpon>Exit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Exit.aspx.designer.cs">
+      <DependentUpon>Exit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -540,6 +586,34 @@
     </Compile>
     <Compile Include="Admin\Template\Templates_Modify.aspx.designer.cs">
       <DependentUpon>Templates_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\AdminAccount_Add.aspx.cs">
+      <DependentUpon>AdminAccount_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\AdminAccount_Add.aspx.designer.cs">
+      <DependentUpon>AdminAccount_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\AdminAccount_List.aspx.cs">
+      <DependentUpon>AdminAccount_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\AdminAccount_List.aspx.designer.cs">
+      <DependentUpon>AdminAccount_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\AdminAccount_Modify.aspx.cs">
+      <DependentUpon>AdminAccount_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\AdminAccount_Modify.aspx.designer.cs">
+      <DependentUpon>AdminAccount_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User\Password_Modify.aspx.cs">
+      <DependentUpon>Password_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User\Password_Modify.aspx.designer.cs">
+      <DependentUpon>Password_Modify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\User\UserInfo_Add.aspx.cs">
       <DependentUpon>UserInfo_Add.aspx</DependentUpon>
@@ -695,6 +769,41 @@
     <Compile Include="GL\Banner\Banner_Modify.aspx.designer.cs">
       <DependentUpon>Banner_Modify.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GL\Domain\Domain_Add.aspx.cs">
+      <DependentUpon>Domain_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\Domain\Domain_Add.aspx.designer.cs">
+      <DependentUpon>Domain_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\Domain\Domain_List.aspx.cs">
+      <DependentUpon>Domain_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\Domain\Domain_List.aspx.designer.cs">
+      <DependentUpon>Domain_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\Domain\Domain_Modify.aspx.cs">
+      <DependentUpon>Domain_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\Domain\Domain_Modify.aspx.designer.cs">
+      <DependentUpon>Domain_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\Exit.aspx.cs">
+      <DependentUpon>Exit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\Exit.aspx.designer.cs">
+      <DependentUpon>Exit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\Fun\CopyTC.aspx.cs">
+      <DependentUpon>CopyTC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\Fun\CopyTC.aspx.designer.cs">
+      <DependentUpon>CopyTC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GL\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -702,12 +811,47 @@
     <Compile Include="GL\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GL\PictureText\PictureTextClass1_Add.aspx.cs">
+      <DependentUpon>PictureTextClass1_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureTextClass1_Add.aspx.designer.cs">
+      <DependentUpon>PictureTextClass1_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureTextClass1_List.aspx.cs">
+      <DependentUpon>PictureTextClass1_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureTextClass1_List.aspx.designer.cs">
+      <DependentUpon>PictureTextClass1_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureTextClass1_Modify.aspx.cs">
+      <DependentUpon>PictureTextClass1_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureTextClass1_Modify.aspx.designer.cs">
+      <DependentUpon>PictureTextClass1_Modify.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GL\PictureText\PictureText_List.aspx.cs">
       <DependentUpon>PictureText_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GL\PictureText\PictureText_List.aspx.designer.cs">
       <DependentUpon>PictureText_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureText_Add.aspx.cs">
+      <DependentUpon>PictureText_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureText_Add.aspx.designer.cs">
+      <DependentUpon>PictureText_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureText_Modify.aspx.cs">
+      <DependentUpon>PictureText_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GL\PictureText\PictureText_Modify.aspx.designer.cs">
+      <DependentUpon>PictureText_Modify.aspx</DependentUpon>
     </Compile>
     <Compile Include="GL\Right.aspx.cs">
       <DependentUpon>Right.aspx</DependentUpon>

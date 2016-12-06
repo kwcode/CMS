@@ -10,8 +10,8 @@
 
     <link href="css/A_login.css" rel="stylesheet" />
     <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/layer/layer.js"></script>
-    <script src="js/common.js"></script>
+    <%--<script src="js/layer/layer.js"></script>--%>
+    <%--<script src="js/common.js"></script>--%>
     <script src="js/A_Login.js"></script>
     <script type="text/javascript">
         $(function () {
