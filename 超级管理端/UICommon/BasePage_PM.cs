@@ -11,7 +11,7 @@ namespace UICommon
 {
     public class BasePage_PM : System.Web.UI.Page
     {
-         
+
         public SuperAdministratorEntity superAdministrator = null;
         public UserInfoEntity userInfo = null;
         protected override void OnInit(EventArgs e)
@@ -33,7 +33,7 @@ namespace UICommon
                     Response.End();
                 }
                 userInfo = Session["UserInfo"] as UserInfoEntity;
-
+                this.Title = "[" + userInfo.UserName + "]用户配置后台";
             }
             catch (Exception)
             {

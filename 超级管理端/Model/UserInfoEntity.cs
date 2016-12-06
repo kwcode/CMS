@@ -23,7 +23,8 @@ namespace Model
         public DateTime CreateTS { get; set; }
 
         #endregion
-
+         
+        public string LoginName { get; set; }
     }
 }
 

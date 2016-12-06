@@ -40,14 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutUsEntity.cs" />
+    <Compile Include="AdminAccountEntity.cs" />
     <Compile Include="ArticleEntity.cs" />
     <Compile Include="ArticleClass1Entity.cs" />
     <Compile Include="BackgroundMenuClass1Entity.cs" />
     <Compile Include="BackgroundMenuEntity.cs" />
+    <Compile Include="BackSectionsSetEntity.cs" />
     <Compile Include="BannerEntity.cs" />
     <Compile Include="DomainEntity.cs" />
     <Compile Include="NavigationBarEntity.cs" />
     <Compile Include="OnlineMessageEntity.cs" />
+    <Compile Include="PictureTextClass1Entity.cs" />
     <Compile Include="PictureTextEntity.cs" />
     <Compile Include="ProductEntity.cs" />
     <Compile Include="ProductClass1Entity.cs" />

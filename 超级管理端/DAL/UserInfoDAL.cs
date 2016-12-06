@@ -116,7 +116,7 @@ namespace DAL
         /// <summary>
         /// 获取数据总数量
         /// </summary>
-        /// <param name="pramsWhere">条件(AND a=1 and b=2)</param>
+        /// <param name="pramsWhere">条件(a=1 and b=2)</param>
         public static int GetRecordCount(string strWhere)
         {
             string SelectIF = " count(1) ";

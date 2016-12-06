@@ -110,9 +110,9 @@ namespace DAL
         /// <param name="PageSize">数量</param>
         /// <param name="SelectIF">查询字段</param>
         /// <param name="pramsWhere">条件(AND a=1 and b=2)</param>
-        public static List<T> GetPageList<T>(int PageIndex, int PageSize, string SelectIF, string strWhere)
+        public static List<T> GetPageList<T>(int PageIndex, int PageSize, string SelectIF, string strWhere,string orderName="ID")
         {
-            DataTable dt = DBCommon.DBHelper.GetDataTablePage(DALUtil.ConnString, TableName, SelectIF, PageIndex, PageSize, strWhere, "ID");
+            DataTable dt = DBCommon.DBHelper.GetDataTablePage(DALUtil.ConnString, TableName, SelectIF, PageIndex, PageSize, strWhere, orderName);
             return DALUtil.ConvertDataTableToEntityList<T>(dt);
         }
 
@@ -170,19 +170,32 @@ namespace DAL
         }
         #endregion
 
+
         #region 获取一个数据[判断是否存在,获取最大值]
         /// <summary>
         /// 获取一个数据[判断是否存在,获取最大值]
         /// </summary>
-        /// <param name="SelectIF">查询数据</param>
-        /// <param name="sqlWhere">条件 And a=1</param>
+        /// <param name="SelectIF">查询数据</param> 
         /// <returns>返回数据</returns>
-        public static int GetSingle(string SelectIF, string sqlWhere = "")
+        public static int GetSingle(string SelectIF)
+        {
+            string sqlWhere = "1=1";
+            object obj = DBCommon.DBHelper.GetSingle(DALUtil.ConnString, TableName, SelectIF, sqlWhere);
+            return DALUtil.ConvertToInt32(obj);
+        }
+        /// <summary>
+        /// 获取一个数据[判断是否存在,获取最大值]
+        /// </summary>
+        /// <param name="SelectIF">查询数据</param>
+        /// <param name="sqlWhere">条件 a=1</param>
+        /// <returns>返回数据</returns>
+        public static int GetSingle(string SelectIF, string sqlWhere)
         {
             object obj = DBCommon.DBHelper.GetSingle(DALUtil.ConnString, TableName, SelectIF, sqlWhere);
             return DALUtil.ConvertToInt32(obj);
         }
         #endregion
+
 
 
 

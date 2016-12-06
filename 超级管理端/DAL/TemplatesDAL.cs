@@ -174,10 +174,21 @@ namespace DAL
         /// <summary>
         /// 获取一个数据[判断是否存在,获取最大值]
         /// </summary>
-        /// <param name="SelectIF">查询数据</param>
-        /// <param name="sqlWhere">条件 And a=1</param>
+        /// <param name="SelectIF">查询数据</param> 
         /// <returns>返回数据</returns>
-        public static int GetSingle(string SelectIF, string sqlWhere = "")
+        public static int GetSingle(string SelectIF)
+        {
+            string sqlWhere = "1=1";
+            object obj = DBCommon.DBHelper.GetSingle(DALUtil.ConnString, TableName, SelectIF, sqlWhere);
+            return DALUtil.ConvertToInt32(obj);
+        }
+        /// <summary>
+        /// 获取一个数据[判断是否存在,获取最大值]
+        /// </summary>
+        /// <param name="SelectIF">查询数据</param>
+        /// <param name="sqlWhere">条件 a=1</param>
+        /// <returns>返回数据</returns>
+        public static int GetSingle(string SelectIF, string sqlWhere)
         {
             object obj = DBCommon.DBHelper.GetSingle(DALUtil.ConnString, TableName, SelectIF, sqlWhere);
             return DALUtil.ConvertToInt32(obj);

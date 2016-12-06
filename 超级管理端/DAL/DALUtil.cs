@@ -115,7 +115,7 @@ namespace DAL
         }
         #endregion
 
-        #region  s
+        #region  GetParams
 
         public static SqlParameter[] GetParams<T>(T t)
         {
@@ -153,6 +153,48 @@ namespace DAL
             return lstParams.ToArray();
         }
 
+        public static SqlParameter[] GetParams<T>(T t, int UserID)
+        {
+            List<SqlParameter> lstParams = new List<SqlParameter>();
+            Type type = typeof(T);
+            List<PropertyInfo> plist = new List<PropertyInfo>(typeof(T).GetProperties());
+            if (plist != null && plist.Count > 0)
+            {
+                foreach (PropertyInfo item in plist)
+                {
+                    if (item.Name.ToLower() != "id")
+                    {
+                        if (item.Name.ToLower() == "userid")
+                        {
+                            lstParams.Add(MakeInParam("@UserID", SqlDbType.Int, 4, UserID));
+                        }
+                        else
+                        {
+                            string dataType = item.PropertyType.Name.ToLower();
+                            SqlDbType _dbType = SqlDbType.NVarChar;
+                            switch (dataType)
+                            {
+                                case "string":
+                                    _dbType = SqlDbType.NVarChar;
+                                    break;
+                                case "int32":
+                                    _dbType = SqlDbType.Int;
+                                    break;
+                                case "datetime":
+                                    _dbType = SqlDbType.DateTime;
+                                    break;
+                                case "decimal":
+                                    _dbType = SqlDbType.Decimal;
+                                    break;
+                            }
+                            object obj = item.GetValue(t, null);
+                            lstParams.Add(MakeInParam("@" + item.Name, _dbType, 0, obj));
+                        }
+                    }
+                }
+            }
+            return lstParams.ToArray();
+        }
         #endregion
 
         #region Object转换为Int32
@@ -179,6 +221,41 @@ namespace DAL
         }
         #endregion
 
+        public static string ConvertToString(object o)
+        {
+            try
+            {
+                if (o != DBNull.Value && o != null && o.ToString() != String.Empty)
+                {
+                    return o.ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        #region 转换为可以保持的sql字符串
+
+        public static string ConverToSqlTxt(object o)
+        {
+            try
+            {
+                string str = ConvertToString(o);
+                str = "'" + str.Replace("'", "''") + "'";
+                return str;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
 
     }
 }

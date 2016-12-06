@@ -4,11 +4,9 @@ using System.Text;
 namespace Model
 {
     /// <summary>
-    /// 实体类AdminAccount
-    /// Class Name：AdminAccount-对应实体类
-    /// Depiction：AdminAccount-对应实体类
-    /// Create By :TCode
-    /// Create Date:2016-11-13 23:05
+    /// 实体：AdminAccountEntity
+    /// 创建工具 :TCode
+    /// 生成时间:2016-11-28 21:55
     /// </summary>
     public class AdminAccountEntity
     {
@@ -19,6 +17,7 @@ namespace Model
         public string Password { get; set; }
         public int UserID { get; set; }
         public DateTime CreateTS { get; set; }
+
         #endregion
 
     }

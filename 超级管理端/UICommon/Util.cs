@@ -112,6 +112,20 @@ namespace UICommon
             }
         }
 
+        public static bool IsNull(object o)
+        {
+            try
+            {
+                string str = ConvertToString(o);
+                return string.IsNullOrEmpty(str);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         #region 防止后退
         /// <summary>

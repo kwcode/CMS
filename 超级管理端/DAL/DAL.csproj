@@ -40,16 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAccountDAL.cs" />
     <Compile Include="ArticleClass1DAL.cs" />
     <Compile Include="ArticleDAL.cs" />
     <Compile Include="BackgroundMenuClass1DAL.cs" />
     <Compile Include="BackgroundMenuDAL.cs" />
+    <Compile Include="BackSectionsSetDAL.cs" />
     <Compile Include="BannerDAL.cs" />
     <Compile Include="BaseDAL.cs" />
     <Compile Include="DALUtil.cs" />
     <Compile Include="DomainDAL.cs" />
     <Compile Include="NavigationBarDAL.cs" />
     <Compile Include="OnlineMessageDAL.cs" />
+    <Compile Include="PictureTextClass1DAL.cs" />
+    <Compile Include="PictureTextDAL.cs" />
     <Compile Include="ProductClass1DAL.cs" />
     <Compile Include="ProductClass2DAL.cs" />
     <Compile Include="ProductClass3DAL.cs" />

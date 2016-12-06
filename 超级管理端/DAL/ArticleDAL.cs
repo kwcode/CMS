@@ -119,7 +119,7 @@ namespace DAL
         /// <summary>
         /// 获取数据总数量
         /// </summary>
-        /// <param name="pramsWhere">条件(AND a=1 and b=2)</param>
+        /// <param name="pramsWhere">条件(a=1 and b=2)</param>
         public static int GetRecordCount(string strWhere)
         {
             string SelectIF = " count(1) ";
@@ -170,19 +170,32 @@ namespace DAL
         }
         #endregion
 
+
         #region 获取一个数据[判断是否存在,获取最大值]
         /// <summary>
         /// 获取一个数据[判断是否存在,获取最大值]
         /// </summary>
-        /// <param name="SelectIF">查询数据</param>
-        /// <param name="sqlWhere">条件 And a=1</param>
+        /// <param name="SelectIF">查询数据</param> 
         /// <returns>返回数据</returns>
-        public static int GetSingle(string SelectIF, string sqlWhere = "")
+        public static int GetSingle(string SelectIF)
+        {
+            string sqlWhere = "1=1";
+            object obj = DBCommon.DBHelper.GetSingle(DALUtil.ConnString, TableName, SelectIF, sqlWhere);
+            return DALUtil.ConvertToInt32(obj);
+        }
+        /// <summary>
+        /// 获取一个数据[判断是否存在,获取最大值]
+        /// </summary>
+        /// <param name="SelectIF">查询数据</param>
+        /// <param name="sqlWhere">条件 a=1</param>
+        /// <returns>返回数据</returns>
+        public static int GetSingle(string SelectIF, string sqlWhere)
         {
             object obj = DBCommon.DBHelper.GetSingle(DALUtil.ConnString, TableName, SelectIF, sqlWhere);
             return DALUtil.ConvertToInt32(obj);
         }
         #endregion
+
 
 
 
