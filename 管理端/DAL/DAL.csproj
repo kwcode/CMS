@@ -41,12 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAccountDAL.cs" />
+    <Compile Include="AnnounceClass1DAL.cs" />
+    <Compile Include="AnnounceDAL.cs" />
     <Compile Include="ArticleClass1DAL.cs" />
     <Compile Include="ArticleDAL.cs" />
     <Compile Include="BackgroundMenuClass1DAL.cs" />
     <Compile Include="BackgroundMenuDAL.cs" />
     <Compile Include="BannerDAL.cs" />
     <Compile Include="BaseDAL.cs" />
+    <Compile Include="CaseClass1DAL.cs" />
+    <Compile Include="CaseDAL.cs" />
     <Compile Include="DALUtil.cs" />
     <Compile Include="DomainDAL.cs" />
     <Compile Include="FriendShipDAL.cs" />
@@ -60,6 +64,8 @@
     <Compile Include="ProductClass3DAL.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolutionClass1DAL.cs" />
+    <Compile Include="SolutionDAL.cs" />
     <Compile Include="UserInfoDAL.cs" />
   </ItemGroup>
   <ItemGroup>

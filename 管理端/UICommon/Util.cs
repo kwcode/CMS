@@ -131,6 +131,21 @@ namespace UICommon
             }
         }
 
+        #region 获取当前登录用户
+
+        public static int GetUserID()
+        { 
+            int UserID = 0;
+            try
+            {
+                Model.UserInfoEntity userInfo = System.Web.HttpContext.Current.Session["UserInfo"] as Model.UserInfoEntity;
+                UserID = userInfo.ID;
+            }
+            catch { }
+            return UserID;
+
+        }
+        #endregion
     }
 }
 

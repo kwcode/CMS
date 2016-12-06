@@ -41,11 +41,15 @@
   <ItemGroup>
     <Compile Include="AboutUsEntity.cs" />
     <Compile Include="AdminAccountEntity.cs" />
+    <Compile Include="AnnounceClass1Entity.cs" />
+    <Compile Include="AnnounceEntity.cs" />
     <Compile Include="ArticleEntity.cs" />
     <Compile Include="ArticleClass1Entity.cs" />
     <Compile Include="BackgroundMenuClass1Entity.cs" />
     <Compile Include="BackgroundMenuEntity.cs" />
     <Compile Include="BannerEntity.cs" />
+    <Compile Include="CaseClass1Entity.cs" />
+    <Compile Include="CaseEntity.cs" />
     <Compile Include="DomainEntity.cs" />
     <Compile Include="FriendShipEntity.cs" />
     <Compile Include="NavigationBarEntity.cs" />
@@ -60,6 +64,8 @@
     <Compile Include="ProductClass3Entity.cs" />
     <Compile Include="ProductImagesEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolutionClass1Entity.cs" />
+    <Compile Include="SolutionEntity.cs" />
     <Compile Include="UserInfoEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
