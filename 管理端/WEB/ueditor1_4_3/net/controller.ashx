@@ -6,13 +6,14 @@ using System.IO;
 using System.Collections;
 using Newtonsoft.Json;
 
-public class UEditorHandler : IHttpHandler
+public class UEditorHandler : IHttpHandler, System.Web.SessionState.IRequiresSessionState
 {
     public void ProcessRequest(HttpContext context)
     {
-    
+        int userid = UICommon.Util.GetUserID();
         Handler action = null;
-        switch (context.Request["action"])
+        string actionType = context.Request["action"];
+        switch (actionType)
         {
             case "config":
                 action = new ConfigHandler(context);
@@ -55,7 +56,7 @@ public class UEditorHandler : IHttpHandler
                     UploadFieldName = Config.GetString("fileFieldName")
                 });
                 break;
-            case "listimage":
+            case "listimage"://在线图片管理
                 action = new ListFileManager(context, Config.GetString("imageManagerListPath"), Config.GetStringList("imageManagerAllowFiles"));
                 break;
             case "listfile":

@@ -49,6 +49,8 @@ public class ListFileManager : Handler
         var buildingList = new List<String>();
         try
         {
+            //替换{userid}为用户ID
+            PathToList = PathToList.Replace("{userid}", UICommon.Util.GetUserID().ToString());
             var localPath = Server.MapPath(PathToList);
             buildingList.AddRange(Directory.GetFiles(localPath, "*", SearchOption.AllDirectories)
                 .Where(x => SearchExtensions.Contains(Path.GetExtension(x).ToLower()))

@@ -44,6 +44,8 @@ public static class PathFormatter
         pathFormat = pathFormat.Replace("{hh}", DateTime.Now.Hour.ToString("D2"));
         pathFormat = pathFormat.Replace("{ii}", DateTime.Now.Minute.ToString("D2"));
         pathFormat = pathFormat.Replace("{ss}", DateTime.Now.Second.ToString("D2"));
+        //tkw 新增的
+        pathFormat = pathFormat.Replace("{userid}", UICommon.Util.GetUserID().ToString());
 
         return pathFormat + extension;
     }

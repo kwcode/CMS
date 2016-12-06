@@ -69,6 +69,7 @@ public class Crawler
                 State = "Url is not an image";
                 return this;
             }
+            //catchimage 内容catcherPathFormat /upload/ContentPictures/20161204/6361648325953816444746444.JPG
             ServerUrl = PathFormatter.Format(Path.GetFileName(this.SourceUrl), Config.GetString("catcherPathFormat"));
             var savePath = Server.MapPath(ServerUrl);
             if (!Directory.Exists(Path.GetDirectoryName(savePath)))
