@@ -64,7 +64,15 @@ function OnEnter(obj) {
 }
 
 function Search(parm) {
+    if (!parm) {
+        parm = "";
+    }
     var keywords = $("#txtSearch").val();
+    if ($(".selclass1").length > 0) {
+
+        parm += "&class1=" + $(".selclass1").val();
+    }
+
     if (parm) {
         window.location.href = window.location.pathname + "?keywords=" + encodeURIComponent(keywords) + parm;
     }
@@ -74,6 +82,11 @@ function Search(parm) {
 }
 
 $(function () {
+    //搜索框默认选中txtSearch
+    if ($("#txtSearch").length > 0) {
+        $("#txtSearch").select().focus();
+    }
+
     //全选
     $(".list_checkall").click(function () {
         if (this.checked) {                 //如果当前点击的多选框被选中

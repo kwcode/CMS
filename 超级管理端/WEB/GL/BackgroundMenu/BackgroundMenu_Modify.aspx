@@ -27,6 +27,8 @@
                     <td class="alignright2">一类：</td>
                     <td>
                         <select runat="server" id="ddlBackgroundMenuClass1"></select>
+                         <asp:DropDownList runat="server" ID="ddlBackSectionsSet" AutoPostBack="true" OnSelectedIndexChanged="ddlBackSectionsSet_SelectedIndexChanged"></asp:DropDownList>
+                        
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator40" runat="server" CssClass="red"
                             ControlToValidate="ddlBackgroundMenuClass1" Display="Dynamic"
                             ErrorMessage="一类不能为空" SetFocusOnError="True">一类不能为空</asp:RequiredFieldValidator>

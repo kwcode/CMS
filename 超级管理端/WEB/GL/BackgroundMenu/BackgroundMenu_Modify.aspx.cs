@@ -23,12 +23,25 @@ namespace WEB.GL.BackgroundMenu
             if (!IsPostBack)
             {
                 #region 一类
-                List<BackgroundMenuClass1Entity> entityList = DAL.BackgroundMenuClass1DAL.GetList<BackgroundMenuClass1Entity>("*", null, "OrderNum");
+                SqlParameter[] pramsWhere =
+                { 
+                    DAL.DALUtil.MakeInParam("@UserID",System.Data.SqlDbType.Int,4,userInfo.ID),
+                };
+                List<BackgroundMenuClass1Entity> entityList = DAL.BackgroundMenuClass1DAL.GetList<BackgroundMenuClass1Entity>("*", pramsWhere, "OrderNum");
                 ddlBackgroundMenuClass1.DataSource = entityList;
                 ddlBackgroundMenuClass1.DataTextField = "Title";
                 ddlBackgroundMenuClass1.DataValueField = "ValueNum";
                 ddlBackgroundMenuClass1.DataBind();
                 ddlBackgroundMenuClass1.Items.Insert(0, new ListItem("请选择", ""));
+                #endregion
+
+                #region ddlBackSectionsSet
+                List<BackSectionsSetEntity> BackSectionsSetList = DAL.BackSectionsSetDAL.GetList<Model.BackSectionsSetEntity>("Title,ManageUrl,ValueNum", null, "OrderNum");
+                ddlBackSectionsSet.DataSource = BackSectionsSetList;
+                ddlBackSectionsSet.DataTextField = "ManageUrl";
+                ddlBackSectionsSet.DataValueField = "ID";
+                ddlBackSectionsSet.DataBind();
+                ddlBackSectionsSet.Items.Insert(0, new ListItem("请选择管理地址", ""));
                 #endregion
 
                 Model.BackgroundMenuEntity entity = DAL.BackgroundMenuDAL.Get_99(ID, "*");
@@ -73,6 +86,15 @@ namespace WEB.GL.BackgroundMenu
             catch (Exception ex)
             {
                 UICommon.ScriptHelper.Alert("保存失败," + ex.Message);
+            }
+        }
+
+        protected void ddlBackSectionsSet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlBackSectionsSet.SelectedValue != "")
+            {
+                ListItem item = ddlBackSectionsSet.SelectedItem;
+                txtManageUrl.Value = item.Text;
             }
         }
     }

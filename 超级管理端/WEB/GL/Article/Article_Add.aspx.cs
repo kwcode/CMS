@@ -30,9 +30,9 @@ namespace WEB.GL.Article
                 ddlArticleClass1.DataBind();
                 ddlArticleClass1.Items.Insert(0, new ListItem("请选择", ""));
 
-                int OrderNum = Util.ConvertToInt32(DAL.ArticleDAL.GetSingle(" Max(OrderNum) ", "AND UserID=" + userInfo.ID));
+                int OrderNum = Util.ConvertToInt32(DAL.ArticleDAL.GetSingle(" Max(OrderNum) ", " UserID=" + userInfo.ID));
                 txtOrderNum.Value = Util.ConvertToString(OrderNum + 1);
-                int ValueNum = Util.ConvertToInt32(DAL.ArticleDAL.GetSingle(" Max(ValueNum) ", "AND UserID=" + userInfo.ID));
+                int ValueNum = Util.ConvertToInt32(DAL.ArticleDAL.GetSingle(" Max(ValueNum) ", " UserID=" + userInfo.ID));
                 txtValueNum.Value = Util.ConvertToString(ValueNum + 1);
             }
         }
@@ -44,7 +44,7 @@ namespace WEB.GL.Article
                 string TxtContent = hide_Content.Value = Server.HtmlDecode(UICommon.Util.ConvertToString(Request["content"]));//这个是ueditor.all.js 里面默认的值 
                 string TitlePictures = UICommon.Util.ConvertToString(Request["hide_ImgPath"]);
                 int ValueNum = Util.ConvertToInt32(txtValueNum.Value.Trim());
-                int isExist = DAL.ArticleDAL.GetSingle("Count(0)", " AND UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum);
+                int isExist = DAL.ArticleDAL.GetSingle("Count(0)", " UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum);
                 if (isExist == 1)
                 {
                     UICommon.ScriptHelper.Alert("值存在");

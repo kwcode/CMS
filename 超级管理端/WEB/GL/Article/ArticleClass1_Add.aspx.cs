@@ -13,9 +13,9 @@ namespace WEB.GL.Article
         {
             if (!IsPostBack)
             {
-                int maxOrder = DAL.ArticleClass1DAL.GetSingle("MAX(OrderNum)", " AND UserID=" + userInfo.ID);
+                int maxOrder = DAL.ArticleClass1DAL.GetSingle("MAX(OrderNum)", " UserID=" + userInfo.ID);
                 txtOrderNum.Value = UICommon.Util.ConvertToString(maxOrder + 1);
-                int maxValue = DAL.ArticleClass1DAL.GetSingle("MAX(ValueNum)", " AND UserID=" + userInfo.ID);
+                int maxValue = DAL.ArticleClass1DAL.GetSingle("MAX(ValueNum)", " UserID=" + userInfo.ID);
                 txtValueNum.Value = UICommon.Util.ConvertToString(maxValue + 1);
             }
         }
@@ -25,7 +25,7 @@ namespace WEB.GL.Article
             {
                 int ValueNum = UICommon.Util.ConvertToInt32(txtValueNum.Value);
                 //是否存在
-                int isExist = DAL.ArticleClass1DAL.GetSingle("Count(0)", " AND UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum);
+                int isExist = DAL.ArticleClass1DAL.GetSingle("Count(0)", " UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum);
                 if (isExist == 1)
                 {
                     UICommon.ScriptHelper.Alert("值存在");

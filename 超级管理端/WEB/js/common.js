@@ -22,8 +22,8 @@
         var def = $.Deferred()
         layer.confirm(msg,
             {
-                title: title || "信息",
-                // btn: ['确定', '取消'] //按钮
+                title: title || "信息"
+                //, btn: ['确定', '取消'] //按钮
             }, function (index) {
                 def.resolve();
                 layer.close(index);

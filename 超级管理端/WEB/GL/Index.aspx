@@ -22,7 +22,7 @@
         <div id="hd">
             <div class="hd-wrap ue-clear">
                 <div class="top-light"></div>
-                <h1 class="logo">超级管理后台
+                <h1 class="logo">用户配置后台
                 </h1>
                 <div class="login-info ue-clear">
                     <div class="welcome ue-clear"><span>欢迎您,</span><a href="javascript:;" class="user-name"><%=userInfo.UserName %></a></div>
@@ -32,9 +32,9 @@
                     </div>--%>
                 </div>
                 <div class="toolbar ue-clear">
-                    <a href="javascript:;" data-href="ProjectConfiguration_List.aspx" class="btn-set">基础配置</a>
-                    <a href="/Admin/index.aspx" class="home-btn">首页</a>
-                    <a href="javascript:;" class="quit-btn exit"></a>
+                    <a href="/Admin/index.aspx" class="btn-set">基础配置</a>
+                    <a href="/GL/index.aspx" class="home-btn">首页</a>
+                    <a href="Exit.aspx" class="quit-btn exit"></a>
                 </div>
             </div>
         </div>
@@ -44,32 +44,33 @@
         <ul class="nav">
             <li class="office current">
                 <div class="nav-header">
+                    <a href="javascript:;" class="ue-clear"><span>功能配置</span><i class="icon"></i></a>
+                </div>
+                <ul class="subnav">
+                    <li><a href="javascript:;" date-src="Fun/CopyTC.aspx">复制</a></li>
+                    <li><a href="javascript:;" date-src="Fun/ImageSizeSet.aspx">图片尺寸</a></li>
+                </ul>
+            </li>
+
+            <li class="office ">
+                <div class="nav-header">
                     <a href="javascript:;" class="ue-clear"><span>栏目配置</span><i class="icon"></i></a>
                 </div>
                 <ul class="subnav">
                     <li><a href="javascript:;" date-src="BackgroundMenu/BackgroundMenuClass1_List.aspx">后台栏目一类</a></li>
                     <li><a href="javascript:;" date-src="BackgroundMenu/BackgroundMenu_List.aspx">后台栏目</a></li>
-                    <li><a href="javascript:;" date-src="BackgroundMenu/NavigationBar_List.aspx">前台栏目</a></li>
+                    <li><a href="javascript:;" date-src="BackgroundMenu/NavigationBar_List.aspx">前台Link栏目</a></li>
                 </ul>
             </li>
             <li class="nav-info">
                 <div class="nav-header">
-                    <a href="javascript:;" class="ue-clear"><span>图文管理</span>
+                    <a href="javascript:;" class="ue-clear"><span>图文配置</span>
                         <i class="icon"></i></a>
                 </div>
                 <ul class="subnav">
-                    <li><a href="javascript:;" date-src="/Article/ArticleClass1_List.aspx">多图管理</a></li>
+                    <li><a href="javascript:;" date-src="PictureText/PictureTextClass1_List.aspx">插图分类</a></li>
+                    <li><a href="javascript:;" date-src="PictureText/PictureText_List.aspx">插图配置</a></li>
                     <li><a href="javascript:;" date-src="Banner/Banner_List.aspx">百叶窗</a></li>
-                </ul>
-            </li>
-            <li class="nav-info">
-                <div class="nav-header">
-                    <a href="javascript:;" class="ue-clear"><span>域名配置</span>
-                        <i class="icon"></i></a>
-                </div>
-                <ul class="subnav">
-                    <li><a href="javascript:;" date-src="/Other/OnlineMessage_List.aspx">域名管理</a></li>
-                    <li><a href="javascript:;" date-src="">插图管理</a></li>
                 </ul>
             </li>
             <li class="nav-info">
@@ -80,6 +81,16 @@
                 <ul class="subnav">
                     <li><a href="javascript:;" date-src="Article/ArticleClass1_List.aspx">文章分类</a></li>
                     <li><a href="javascript:;" date-src="Article/Article_List.aspx">文章列表</a></li>
+                </ul>
+            </li>
+            <li class="nav-info">
+                <div class="nav-header">
+                    <a href="javascript:;" class="ue-clear"><span>其他管理</span>
+                        <i class="icon"></i></a>
+                </div>
+                <ul class="subnav">
+                    <li><a href="javascript:;" date-src="Domain/Domain_List.aspx">域名管理</a></li>
+                    <li><a href="javascript:;" date-src="">客户管理</a></li>
                 </ul>
             </li>
         </ul>
@@ -96,8 +107,8 @@
     <div data-options="region:'south',border:false" style="height: 30px;">
         <div id="ft" class="ue-clear">
             <div class="ft-left">
-                <span>项目管理</span>
-                <em>ProjectManagement&nbsp;System</em>
+                <span>用户配置后台</span>
+                <em>GLAdministrator&nbsp;System</em>
             </div>
             <div class="ft-right">
                 <span>Automation</span>

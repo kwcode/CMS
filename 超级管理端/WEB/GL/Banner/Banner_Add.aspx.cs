@@ -24,7 +24,7 @@ namespace WEB.GL.Banner
         {
             if (!IsPostBack)
             {
-                int OrderNum = Util.ConvertToInt32(DAL.BannerDAL.GetSingle(" Max(OrderNum) ", "AND UserID=" + userInfo.ID));
+                int OrderNum = Util.ConvertToInt32(DAL.BannerDAL.GetSingle(" Max(OrderNum) ", " UserID=" + userInfo.ID));
                 txtOrderNum.Value = Util.ConvertToString(OrderNum + 1);
             }
         }

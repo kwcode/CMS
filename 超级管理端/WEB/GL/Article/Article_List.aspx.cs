@@ -1,6 +1,8 @@
-﻿using Model;
+﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -29,10 +31,31 @@ namespace WEB.GL.Article
                 return UICommon.Util.ConvertToString(Request["keywords"]).Trim();
             }
         }
+
+        public string class1
+        {
+            get
+            {
+                return UICommon.Util.ConvertToString(Request["class1"]).Trim();
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                #region MyRegion
+                SqlParameter[] pramsWhere =
+				{
+					DALUtil.MakeInParam("@UserID", SqlDbType.Int, 4, userInfo.ID)
+				};
+                List<ArticleClass1Entity> articleClass1List = DAL.ArticleClass1DAL.GetList<Model.ArticleClass1Entity>("Title,ValueNum", pramsWhere, "OrderNum");
+                ddlArticleClass1.DataSource = articleClass1List;
+                ddlArticleClass1.DataTextField = "Title";
+                ddlArticleClass1.DataValueField = "ValueNum";
+                ddlArticleClass1.DataBind();
+                ddlArticleClass1.Items.Insert(0, new ListItem("请选择分类", ""));
+                ddlArticleClass1.Value = class1;
+                #endregion
                 BindData();
             }
         }
@@ -67,14 +90,18 @@ namespace WEB.GL.Article
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
-            sqlWhere.Append(" AND UserID=" + userInfo.ID);
+            sqlWhere.Append(" UserID=" + userInfo.ID);
             if (!string.IsNullOrEmpty(KeyWords))
             {
-                sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");
+                sqlWhere.Append(" AND Title Like '%" + Server.UrlDecode(KeyWords) + "%'");
             }
-            TotalCount = DAL.ArticleClass1DAL.GetRecordCount(sqlWhere.ToString());
-            List<Model.ArticleEntity> productList = DAL.ArticleDAL.GetPageList<Model.ArticleEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
-            gv_List.DataSource = productList;
+            if (!Util.IsNull(class1))
+            {
+                sqlWhere.Append(" AND ArticleClass1_ValueNum =" + DAL.DALUtil.ConverToSqlTxt(class1));
+            }
+            TotalCount = DAL.ArticleDAL.GetRecordCount(sqlWhere.ToString());
+            List<Model.ArticleEntity> entityList = DAL.ArticleDAL.GetPageList<Model.ArticleEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
+            gv_List.DataSource = entityList;
             gv_List.DataBind();
         }
 
@@ -94,9 +121,9 @@ namespace WEB.GL.Article
                         DAL.DALUtil.MakeInParam("@UserID",System.Data.SqlDbType.Int,4,userInfo.ID),
                         DAL.DALUtil.MakeInParam("@ValueNum",System.Data.SqlDbType.Int,4,ArticleClass1_ValueNum),
                     };
-                    
-                  ArticleClass1Entity entity=  DAL.ArticleClass1DAL.Get1<ArticleClass1Entity>("Title",pramsWhere);
-                  ltArticleClass1_ValueNum.Text = entity.Title;
+
+                    ArticleClass1Entity entity = DAL.ArticleClass1DAL.Get1<ArticleClass1Entity>("Title", pramsWhere);
+                    ltArticleClass1_ValueNum.Text = entity.Title;
                 }
             }
             catch { }

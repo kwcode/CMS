@@ -14,9 +14,10 @@ namespace WEB.GL.BackgroundMenu
         {
             if (!IsPostBack)
             {
-                int maxOrder = DAL.BackgroundMenuClass1DAL.GetSingle("MAX(OrderNum)");
+
+                int maxOrder = DAL.BackgroundMenuClass1DAL.GetSingle("MAX(OrderNum)", "UserID=" + userInfo.ID);
                 txtOrderNum.Value = UICommon.Util.ConvertToString(maxOrder + 1);
-                int maxValueNum = DAL.BackgroundMenuClass1DAL.GetSingle("MAX(ValueNum)");
+                int maxValueNum = DAL.BackgroundMenuClass1DAL.GetSingle("MAX(ValueNum)", "UserID=" + userInfo.ID);
                 txtValueNum.Value = UICommon.Util.ConvertToString(maxValueNum + 1);
             }
         }

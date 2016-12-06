@@ -28,6 +28,7 @@
             </div>
             <div class="right" style="margin-right: 20px; padding: 0px 10px;">
                 <div class="searchbox clearfix">
+                    <select runat="server" class="selclass1" id="ddlArticleClass1"></select>
                     <input type="text" class="inpt-search" value="<%=KeyWords%>" onkeydown="OnEnter(this)" id="txtSearch" />
                     <a class="btn-search" onclick="Search()">
                         <span class="s-icon"></span>
@@ -38,8 +39,7 @@
         </div>
         <form id="form1" runat="server">
             <asp:GridView ID="gv_List" DataKeyNames="ID" CssClass="m-table" runat="server" AutoGenerateColumns="False" Width="100%"
-                OnRowDataBound="gv_List_RowDataBound"
-                >
+                OnRowDataBound="gv_List_RowDataBound">
                 <Columns>
                     <asp:TemplateField HeaderText="全选">
                         <ItemStyle HorizontalAlign="Center" Width="50" />

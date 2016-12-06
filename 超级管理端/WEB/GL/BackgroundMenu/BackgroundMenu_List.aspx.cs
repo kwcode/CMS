@@ -1,5 +1,9 @@
-﻿using System;
+﻿using DAL;
+using Model;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -28,10 +32,30 @@ namespace WEB.GL.BackgroundMenu
                 return UICommon.Util.ConvertToString(Request["keywords"]).Trim();
             }
         }
+        public string class1
+        {
+            get
+            {
+                return UICommon.Util.ConvertToString(Request["class1"]).Trim();
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                #region MyRegion
+                SqlParameter[] pramsWhere =
+				{
+					DALUtil.MakeInParam("@UserID", SqlDbType.Int, 4, userInfo.ID)
+				};
+                List<BackgroundMenuClass1Entity> articleClass1List = DAL.BackgroundMenuClass1DAL.GetList<Model.BackgroundMenuClass1Entity>("Title,ValueNum", pramsWhere, "OrderNum");
+                ddlArticleClass1.DataSource = articleClass1List;
+                ddlArticleClass1.DataTextField = "Title";
+                ddlArticleClass1.DataValueField = "ValueNum";
+                ddlArticleClass1.DataBind();
+                ddlArticleClass1.Items.Insert(0, new ListItem("请选一级分类", ""));
+                ddlArticleClass1.Value = class1;
+                #endregion
                 BindData();
             }
         }
@@ -65,9 +89,14 @@ namespace WEB.GL.BackgroundMenu
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
+            sqlWhere.Append("UserID=" + userInfo.ID);
             if (!string.IsNullOrEmpty(KeyWords))
             {
                 sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");
+            }
+            if (!Util.IsNull(class1))
+            {
+                sqlWhere.Append(" AND BackgroundMenuClass1_ValueNum =" + DAL.DALUtil.ConverToSqlTxt(class1));
             }
             TotalCount = DAL.BackgroundMenuDAL.GetRecordCount(sqlWhere.ToString());
             List<Model.BackgroundMenuEntity> productList = DAL.BackgroundMenuDAL.GetPageList<Model.BackgroundMenuEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
@@ -86,7 +115,7 @@ namespace WEB.GL.BackgroundMenu
                 if (ltBackgroundMenuClass1_ValueNum != null)
                 {
                     int BackgroundMenuClass1_ValueNum = Util.ConvertToInt32(ltBackgroundMenuClass1_ValueNum.Text);
-                    ltBackgroundMenuClass1_ValueNum.Text = DAL.BackgroundMenuClass1DAL.Get_99(BackgroundMenuClass1_ValueNum, "Title").Title;
+                    ltBackgroundMenuClass1_ValueNum.Text = DAL.BackgroundMenuClass1DAL.Get_98(BackgroundMenuClass1_ValueNum, userInfo.ID, "Title").Title;
                 }
             }
             catch { }

@@ -11,6 +11,9 @@
     <script src="/js/jquery-page.js"></script>
     <script src="/js/common.js"></script>
     <script src="/js/tc-list.js"></script>
+    <style>
+        /*.m-table tbody td { }*/
+    </style>
 </head>
 <body>
     <div class="g-div-e">
@@ -26,8 +29,9 @@
                     <span class="l-btn-text">删除</span>
                 </a>
             </div>
-            <div class="right" style="margin-right: 20px; padding: 0px 10px;">
+              <div class="right" style="margin-right: 20px; padding: 0px 10px;">
                 <div class="searchbox clearfix">
+                    <select runat="server" class="selclass1" id="ddlArticleClass1"></select>
                     <input type="text" class="inpt-search" value="<%=KeyWords%>" onkeydown="OnEnter(this)" id="txtSearch" />
                     <a class="btn-search" onclick="Search()">
                         <span class="s-icon"></span>
@@ -62,7 +66,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="名称">
-                        <ItemStyle HorizontalAlign="Left" />
+                        <ItemStyle HorizontalAlign="Left" Width="150" />
                         <ItemTemplate>
                             <asp:Literal ID="Title" runat="server" Text='<%#Eval("Title")%>'></asp:Literal>
                         </ItemTemplate>
@@ -76,7 +80,7 @@
                     <asp:TemplateField HeaderText="管理地址">
                         <ItemStyle HorizontalAlign="Left" Width="50" />
                         <ItemTemplate>
-                            <asp:Literal ID="ManageUrl" runat="server" Text='<%#Eval("ManageUrl")%>'></asp:Literal>
+                            <asp:Label CssClass="red" ID="ManageUrl" runat="server" Text='<%#Eval("ManageUrl")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="描述">

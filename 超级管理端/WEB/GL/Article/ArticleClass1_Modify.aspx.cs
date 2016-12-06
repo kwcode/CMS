@@ -35,7 +35,7 @@ namespace WEB.GL.Article
             try
             {
                 int ValueNum = Util.ConvertToInt32(txtValueNum.Value.Trim());
-                int isExist = DAL.ArticleClass1DAL.GetSingle("Count(0)", " AND UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum + " AND ID <>" + ID);
+                int isExist = DAL.ArticleClass1DAL.GetSingle("Count(0)", " UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum + " AND ID <>" + ID);
                 if (isExist == 1)
                 {
                     UICommon.ScriptHelper.Alert("值存在");

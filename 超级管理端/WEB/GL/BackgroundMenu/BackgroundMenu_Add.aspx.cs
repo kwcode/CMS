@@ -1,6 +1,8 @@
-﻿using Model;
+﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -15,17 +17,30 @@ namespace WEB.GL.BackgroundMenu
         {
             if (!IsPostBack)
             {
-                int maxOrder = DAL.BackgroundMenuClass1DAL.GetSingle("MAX(OrderNum)");
+                int maxOrder = DAL.BackgroundMenuDAL.GetSingle("MAX(OrderNum)", "UserID=" + userInfo.ID);
                 txtOrderNum.Value = UICommon.Util.ConvertToString(maxOrder + 1);
-                int maxValueNum = DAL.BackgroundMenuClass1DAL.GetSingle("MAX(ValueNum)");
+                int maxValueNum = DAL.BackgroundMenuDAL.GetSingle("MAX(ValueNum)", "UserID=" + userInfo.ID);
                 txtValueNum.Value = UICommon.Util.ConvertToString(maxValueNum + 1); ;
                 #region 一类
-                List<BackgroundMenuClass1Entity> entityList = DAL.BackgroundMenuClass1DAL.GetList<BackgroundMenuClass1Entity>("*", null, "OrderNum");
+                SqlParameter[] pramsWhere =
+				{
+					DALUtil.MakeInParam("@UserID", SqlDbType.Int, 4, userInfo.ID)
+				};
+                List<BackgroundMenuClass1Entity> entityList = DAL.BackgroundMenuClass1DAL.GetList<BackgroundMenuClass1Entity>("Title,ValueNum", pramsWhere, "OrderNum");
                 ddlBackgroundMenuClass1.DataSource = entityList;
                 ddlBackgroundMenuClass1.DataTextField = "Title";
                 ddlBackgroundMenuClass1.DataValueField = "ValueNum";
                 ddlBackgroundMenuClass1.DataBind();
                 ddlBackgroundMenuClass1.Items.Insert(0, new ListItem("请选择", ""));
+                #endregion
+
+                #region ddlBackSectionsSet
+                List<BackSectionsSetEntity> BackSectionsSetList = DAL.BackSectionsSetDAL.GetList<Model.BackSectionsSetEntity>("Title,ManageUrl,ValueNum", null, "OrderNum");
+                ddlBackSectionsSet.DataSource = BackSectionsSetList;
+                ddlBackSectionsSet.DataTextField = "ManageUrl";
+                ddlBackSectionsSet.DataValueField = "ID";
+                ddlBackSectionsSet.DataBind();
+                ddlBackSectionsSet.Items.Insert(0, new ListItem("请选择管理地址", ""));
                 #endregion
             }
         }
@@ -55,7 +70,7 @@ namespace WEB.GL.BackgroundMenu
                 {
                     txtTitle.Value = string.Empty;
                     txtOrderNum.Value = UICommon.Util.ConvertToString(OrderNum + 1);
-                    txtValueNum.Value = UICommon.Util.ConvertToString(ValueNum + 1); 
+                    txtValueNum.Value = UICommon.Util.ConvertToString(ValueNum + 1);
                     UICommon.ScriptHelper.Alert(title + "，保存成功！");
                 }
                 else
@@ -68,5 +83,15 @@ namespace WEB.GL.BackgroundMenu
                 UICommon.ScriptHelper.Alert("保存失败," + ex.Message);
             }
         }
+
+        protected void ddlBackSectionsSet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlBackSectionsSet.SelectedValue != "")
+            {
+                ListItem item = ddlBackSectionsSet.SelectedItem;
+                txtManageUrl.Value = item.Text;
+            }
+        }
+
     }
 }

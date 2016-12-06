@@ -65,12 +65,13 @@ namespace WEB.GL.BackgroundMenu
         private void BindData()
         {
             System.Text.StringBuilder sqlWhere = new System.Text.StringBuilder();
+            sqlWhere.Append("UserID=" + userInfo.ID);
             if (!string.IsNullOrEmpty(KeyWords))
             {
                 sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");
             }
             TotalCount = DAL.NavigationBarDAL.GetRecordCount(sqlWhere.ToString());
-            List<Model.NavigationBarEntity> entityList = DAL.NavigationBarDAL.GetPageList<Model.NavigationBarEntity>(PageIndex, PageSize, "*", sqlWhere.ToString());
+            List<Model.NavigationBarEntity> entityList = DAL.NavigationBarDAL.GetPageList<Model.NavigationBarEntity>(PageIndex, PageSize, "*", sqlWhere.ToString(),"OrderNum");
             gv_List.DataSource = entityList;
             gv_List.DataBind();
         }

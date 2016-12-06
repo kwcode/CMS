@@ -61,7 +61,7 @@ namespace WEB.GL.Article
                 string TxtContent = hide_Content.Value = Server.HtmlDecode(UICommon.Util.ConvertToString(Request["content"]));//这个是ueditor.all.js 里面默认的值 
                 string TitlePictures = hide_ImgPath.Value = UICommon.Util.ConvertToString(Request["hide_ImgPath"]);
                 int ValueNum = Util.ConvertToInt32(txtValueNum.Value.Trim());
-                int isExist = DAL.ArticleDAL.GetSingle("Count(0)", " AND UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum + " AND ID <>" + ID);
+                int isExist = DAL.ArticleDAL.GetSingle("Count(0)", " UserID=" + userInfo.ID + " AND ValueNum=" + ValueNum + " AND ID <>" + ID);
                 if (isExist == 1)
                 {
                     UICommon.ScriptHelper.Alert("值存在");
@@ -77,8 +77,7 @@ namespace WEB.GL.Article
                 int OrderNum = Util.ConvertToInt32(txtOrderNum.Value.Trim());
                 SqlParameter[] pramsModify =
                 {
-                    DAL.DALUtil.MakeInParam("@Title",System.Data.SqlDbType.NVarChar,100,Title),
-                    DAL.DALUtil.MakeInParam("@UserID",System.Data.SqlDbType.Int,4,userInfo.ID),  
+                    DAL.DALUtil.MakeInParam("@Title",System.Data.SqlDbType.NVarChar,100,Title), 
                     DAL.DALUtil.MakeInParam("@MaturityDate",System.Data.SqlDbType.DateTime,8,DateTime.Now),  
                     DAL.DALUtil.MakeInParam("@ArticleClass1_ValueNum",System.Data.SqlDbType.Int,4,ArticleClass1_ValueNum),  
 
