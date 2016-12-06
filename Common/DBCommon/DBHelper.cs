@@ -214,15 +214,15 @@ namespace DBCommon
         /// <param name="SelectIF"></param>
         /// <param name="pramsWhere"></param>
         /// <returns></returns>
-        public static DataTable GetDataTable1(string connString, string Table, string SelectIF, SqlParameter[] pramsWhere)
+        public static DataTable GetDataTable1(string connString, string Table, string SelectIF, SqlParameter[] pramsWhere, string OrderName = "")
         {
             try
             {
-                if (SelectIF.ToLower().IndexOf("top ") < 0)
+                if (SelectIF.ToLower().IndexOf("top") < 0)
                 {
                     SelectIF = " top 1 " + SelectIF;
                 }
-                DataTable dataTable = GetDataTable2(connString, Table, SelectIF, pramsWhere);
+                DataTable dataTable = GetDataTable2(connString, Table, SelectIF, pramsWhere, OrderName);
                 return dataTable;
             }
             catch (Exception ex)
@@ -357,7 +357,7 @@ namespace DBCommon
                         strSql.Append("order by T." + OrderName);
                     }
                     strSql.Append(")AS Row, T.*  from " + Table + " T ");
-                    strSql.Append(" WHERE 1=1 " + strWhere.ToString());
+                    strSql.Append(" WHERE " + strWhere.ToString());
                     strSql.Append(" ) TT");
                     strSql.Append(" WHERE TT.Row between " + ((PageIndex - 1) * PageSize + 1) + " and " + (PageIndex * PageSize));
                     cmd.Connection = MyConn;
@@ -430,7 +430,7 @@ namespace DBCommon
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         MyConn.Open();
-                        string sqlText = " SELECT " + SelectIF + " FROM  " + Table + " WHERE 1=1 " + sqlWhere;
+                        string sqlText = " SELECT " + SelectIF + " FROM  " + Table + " WHERE " + sqlWhere;
                         cmd.Connection = MyConn;
                         cmd.CommandText = sqlText;
                         Object obj = cmd.ExecuteScalar();
