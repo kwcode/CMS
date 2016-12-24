@@ -141,7 +141,17 @@ namespace UICommon
 
         }
 
-
+        public static string GetFileTxt(string path)
+        {
+            System.IO.FileStream fsr = System.IO.File.OpenRead(path);
+            System.IO.StreamReader sr = new System.IO.StreamReader(fsr); 
+            string record = sr.ReadToEnd();
+            sr.Close();
+            sr.Dispose();
+            fsr.Close();
+            fsr.Dispose();
+            return record;
+        }
     }
     /// <summary>
     /// 根据传递不多的使用类型创建枚举
