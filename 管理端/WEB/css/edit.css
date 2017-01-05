@@ -35,7 +35,7 @@ input, button, select, textarea { outline: 0; }
 .btnbox .btn { margin-left: 10px; }
 
 .boxline { height: 60px; }
-.btnbox2 { position: fixed; bottom: 0px; background: #d8d7d7; display: block; width: 100%; z-index: 1000; padding: 10px 180px; }
+.btnbox2 { position: fixed;left: 0; bottom: 0px; background: #d8d7d7; display: block; width: 100%; z-index: 1000; padding: 10px 180px; }
 
 .btn-primary { color: #fff; background-color: #428bca; border-color: #357ebd; }
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary { color: #fff; background-color: #3071a9; border-color: #285e8e; }
@@ -67,3 +67,5 @@ input, button, select, textarea { outline: 0; }
 .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active { border-color: transparent; }
 .btn-link:hover, .btn-link:focus { color: #2a6496; text-decoration: underline; background-color: transparent; }
 .btn-link[disabled]:hover, fieldset[disabled] .btn-link:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:focus { color: #777; text-decoration: none; }
+
+
