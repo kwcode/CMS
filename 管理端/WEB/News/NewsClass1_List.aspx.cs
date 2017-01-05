@@ -71,7 +71,7 @@ namespace WEB.News
                 sqlWhere.Append(" AND Title Like '%" + KeyWords + "%'");
             }
             TotalCount = DAL.NewsClass1DAL.GetRecordCount(sqlWhere.ToString());
-            List<Model.ArticleClass1Entity> productList = DAL.NewsClass1DAL.GetPageList<Model.ArticleClass1Entity>(PageIndex, PageSize, "*", sqlWhere.ToString());
+            List<Model.NewsClass1Entity> productList = DAL.NewsClass1DAL.GetPageList<Model.NewsClass1Entity>(PageIndex, PageSize, "*", sqlWhere.ToString());
             gv_List.DataSource = productList;
             gv_List.DataBind();
         }

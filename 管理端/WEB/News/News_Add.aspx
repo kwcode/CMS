@@ -14,34 +14,7 @@
 
     <script src="/ueditor1_4_3/ueditor.config.js"></script>
     <script src="/ueditor1_4_3/ueditor.all.js"></script>
-
-    <!-- 实例化编辑器 -->
-    <script type="text/javascript">
-        $(function () {
-            var _layer, isclose = true;
-            if (layer.index == 1) {
-                isclose = false;
-            }
-            else {
-                _layer = $.tc.showWaiting("请稍等...", 0, 6);
-            }
-            var htmlContent = document.getElementById("<%=this.hide_Content.ClientID%>").value;
-            //正确的初始化方式  阻止复制的div标签自动转换为p标签
-            var ue = UE.getEditor('editor', { allowDivTransToP: false });
-            //正确的初始化方式
-            ue.ready(function () {
-                //this是当前创建的编辑器实例
-                this.setContent(htmlContent);
-                if (isclose) {
-                    layer.close(_layer);
-                }
-            })
-
-            //给图片赋值
-            var imgPath = document.getElementById("<%=this.hide_ImgPath.ClientID%>").value;
-            $("#img").attr("src", imgPath);
-        })
-    </script>
+     <script src="/js/hasUeEdit.js"></script> 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -79,7 +52,7 @@
                 <tr>
                     <td class="alignright">图片：</td>
                     <td>
-                        <img id="img" style="width: 100px; height: 100px;" onclick="OpenUploadFile()" />
+                        <img id="img" style="width: 100px; height: 100px;" onclick="OpenUploadFile2()" />
                         <asp:HiddenField runat="server" ID="hide_ImgPath" />
                     </td>
                 </tr>
