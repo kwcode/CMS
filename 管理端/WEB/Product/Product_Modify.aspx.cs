@@ -52,7 +52,8 @@ namespace WEB.Product
                 txtProductNum.Value = UICommon.Util.ConvertToString(entity.ProductNum);
                 hide_Content.Value = entity.TxtContent;//这个是ueditor.all.js 里面默认的值 
                 hide_ImgPath.Value = entity.TitlePictures;
-
+                hide_ImgID.Value = Util.ConvertToInt32(entity.Picture_ID).ToString();
+                
                 #endregion
 
 
@@ -105,6 +106,8 @@ namespace WEB.Product
                 int ProductNum = Util.ConvertToInt32(txtProductNum.Value);
                 string TxtContent = hide_Content.Value = Server.HtmlDecode(UICommon.Util.ConvertToString(Request["content"]));//这个是ueditor.all.js 里面默认的值 
                 string TitlePictures = hide_ImgPath.Value = UICommon.Util.ConvertToString(Request["hide_ImgPath"]);
+                int Picture_ID = UICommon.Util.ConvertToInt32(Request["hide_ImgID"]);
+                hide_ImgID.Value = Picture_ID.ToString();
                 SqlParameter[] pramsModify =
                 {
                     DAL.DALUtil.MakeInParam("@Title",System.Data.SqlDbType.NVarChar,100,Title),
@@ -124,6 +127,7 @@ namespace WEB.Product
                     DAL.DALUtil.MakeInParam("@SeoTitle",System.Data.SqlDbType.NVarChar,300,SeoTitle),
                     DAL.DALUtil.MakeInParam("@TxtContent",System.Data.SqlDbType.NText,TxtContent.Length,TxtContent),
                     DAL.DALUtil.MakeInParam("@TitlePictures",System.Data.SqlDbType.NVarChar,250,TitlePictures),
+                    DAL.DALUtil.MakeInParam("@Picture_ID",System.Data.SqlDbType.Int,4,Picture_ID),
                 };
                 int row_Mod = DAL.ProductDAL.Modify(pramsModify, ID);
                 if (row_Mod > 0)

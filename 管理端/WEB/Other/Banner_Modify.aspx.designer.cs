@@ -58,15 +58,6 @@ namespace WEB.Other {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// img 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage img;
-        
-        /// <summary>
         /// hide_ImgPath 控件。
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace WEB.Other {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hide_ImgPath;
+        
+        /// <summary>
+        /// hide_ImgID 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hide_ImgID;
         
         /// <summary>
         /// txtUrl 控件。
@@ -103,13 +103,13 @@ namespace WEB.Other {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// txtDescription  控件。
+        /// txtDescription 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescription ;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescription;
         
         /// <summary>
         /// btnSave 控件。

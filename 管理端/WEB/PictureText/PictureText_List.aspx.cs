@@ -123,20 +123,7 @@ namespace WEB.PictureText
                         imgHtml += "</div>";
                         ltImagePath.Text = imgHtml;
                     }
-                }
-
-                //if (ltArticleClass1_ValueNum != null)
-                //{
-                //    int ArticleClass1_ValueNum = Util.ConvertToInt32(ltArticleClass1_ValueNum.Text);
-                //    SqlParameter[] pramsWhere =
-                //    {
-                //        DAL.DALUtil.MakeInParam("@UserID",System.Data.SqlDbType.Int,4,userInfo.ID),
-                //        DAL.DALUtil.MakeInParam("@ValueNum",System.Data.SqlDbType.Int,4,ArticleClass1_ValueNum),
-                //    };
-
-                //    ArticleClass1Entity entity = DAL.PictureTextDAL.Get1<ArticleClass1Entity>("Title", pramsWhere);
-                //    ltArticleClass1_ValueNum.Text = entity.Title;
-                //}
+                } 
             }
             catch { }
         }

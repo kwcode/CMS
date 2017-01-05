@@ -87,7 +87,8 @@
                     <asp:TemplateField HeaderText="操作" FooterText="操作">
                         <ItemStyle HorizontalAlign="Center" Width="100" />
                         <ItemTemplate>
-                            <a class="l-btn" onclick="PopShow('Banner_Modify.aspx?id=<%#Eval("ID")%>',{area: ['500px', '400px']})">
+                            <a class="td-btn" href="Banner_Modify.aspx?id=<%#Eval("ID")%>" target="_blank">
+
                                 <span class="td-btn-icon  icon-edit"></span>
                                 <span class="td-btn-text">修改</span>
                             </a>

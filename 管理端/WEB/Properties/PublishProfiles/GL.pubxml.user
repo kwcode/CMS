@@ -10,6 +10,24 @@
     <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
   <ItemGroup>
+    <File Include="Announce/AnnounceClass1_Add.aspx">
+      <publishTime>12/04/2016 16:54:27</publishTime>
+    </File>
+    <File Include="Announce/AnnounceClass1_List.aspx">
+      <publishTime>12/04/2016 16:54:27</publishTime>
+    </File>
+    <File Include="Announce/AnnounceClass1_Modify.aspx">
+      <publishTime>12/04/2016 16:54:27</publishTime>
+    </File>
+    <File Include="Announce/Announce_Add.aspx">
+      <publishTime>12/04/2016 16:54:58</publishTime>
+    </File>
+    <File Include="Announce/Announce_List.aspx">
+      <publishTime>12/04/2016 16:54:27</publishTime>
+    </File>
+    <File Include="Announce/Announce_Modify.aspx">
+      <publishTime>12/04/2016 16:54:27</publishTime>
+    </File>
     <File Include="Article/ArticleClass1_Add.aspx">
       <publishTime>11/27/2016 16:14:05</publishTime>
     </File>
@@ -26,28 +44,46 @@
       <publishTime>11/27/2016 16:15:31</publishTime>
     </File>
     <File Include="Article/Article_Modify.aspx">
-      <publishTime>11/27/2016 16:14:05</publishTime>
+      <publishTime>12/03/2016 03:48:05</publishTime>
     </File>
     <File Include="Article/Detail_ValueNum.aspx">
-      <publishTime>11/27/2016 16:14:05</publishTime>
+      <publishTime>12/03/2016 03:35:12</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>12/03/2016 02:52:49</publishTime>
+      <publishTime>12/07/2016 22:18:57</publishTime>
     </File>
     <File Include="bin/DBCommon.dll">
       <publishTime>12/02/2016 00:30:46</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>12/03/2016 02:52:48</publishTime>
+      <publishTime>12/07/2016 22:18:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>11/22/2016 23:25:29</publishTime>
+      <publishTime>11/30/2015 22:21:54</publishTime>
     </File>
     <File Include="bin/UICommon.dll">
-      <publishTime>12/03/2016 02:52:50</publishTime>
+      <publishTime>12/07/2016 22:18:57</publishTime>
     </File>
     <File Include="bin/WEB.dll">
-      <publishTime>12/03/2016 02:52:51</publishTime>
+      <publishTime>12/07/2016 22:19:29</publishTime>
+    </File>
+    <File Include="Case/CaseClass1_Add.aspx">
+      <publishTime>12/04/2016 16:52:06</publishTime>
+    </File>
+    <File Include="Case/CaseClass1_List.aspx">
+      <publishTime>12/04/2016 16:52:10</publishTime>
+    </File>
+    <File Include="Case/CaseClass1_Modify.aspx">
+      <publishTime>12/04/2016 16:52:15</publishTime>
+    </File>
+    <File Include="Case/Case_Add.aspx">
+      <publishTime>12/04/2016 16:54:12</publishTime>
+    </File>
+    <File Include="Case/Case_List.aspx">
+      <publishTime>12/04/2016 16:51:53</publishTime>
+    </File>
+    <File Include="Case/Case_Modify.aspx">
+      <publishTime>12/04/2016 16:52:00</publishTime>
     </File>
     <File Include="css/A_login.css">
       <publishTime>11/16/2016 22:54:05</publishTime>
@@ -59,16 +95,16 @@
       <publishTime>11/17/2016 00:08:17</publishTime>
     </File>
     <File Include="css/datagrid.css">
-      <publishTime>12/03/2016 00:41:51</publishTime>
+      <publishTime>12/03/2016 03:21:53</publishTime>
     </File>
     <File Include="css/edit.css">
-      <publishTime>11/25/2016 23:35:49</publishTime>
+      <publishTime>12/03/2016 03:47:08</publishTime>
     </File>
     <File Include="css/home.css">
       <publishTime>11/17/2016 00:08:17</publishTime>
     </File>
     <File Include="css/index.css">
-      <publishTime>11/17/2016 00:37:30</publishTime>
+      <publishTime>12/03/2016 03:57:48</publishTime>
     </File>
     <File Include="css/layout.css">
       <publishTime>11/17/2016 00:08:17</publishTime>
@@ -83,7 +119,7 @@
       <publishTime>11/27/2016 17:24:54</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>11/27/2016 16:16:21</publishTime>
+      <publishTime>12/03/2016 04:09:52</publishTime>
     </File>
     <File Include="Images/A_Image/005.png">
       <publishTime>11/16/2016 22:52:51</publishTime>
@@ -135,6 +171,9 @@
     </File>
     <File Include="Images/A_Image/yzm.png">
       <publishTime>11/16/2016 22:52:51</publishTime>
+    </File>
+    <File Include="Images/clear.png">
+      <publishTime>09/14/2016 00:54:38</publishTime>
     </File>
     <File Include="Images/close.gif">
       <publishTime>11/20/2016 00:10:55</publishTime>
@@ -193,8 +232,17 @@
     <File Include="Images/more.png">
       <publishTime>11/17/2016 00:40:50</publishTime>
     </File>
+    <File Include="Images/pencil.png">
+      <publishTime>09/14/2016 00:54:42</publishTime>
+    </File>
+    <File Include="Images/preview.png">
+      <publishTime>12/03/2016 03:59:30</publishTime>
+    </File>
     <File Include="Images/righttitlebig.png">
       <publishTime>11/17/2016 00:12:31</publishTime>
+    </File>
+    <File Include="Images/search.png">
+      <publishTime>09/14/2016 00:54:45</publishTime>
     </File>
     <File Include="Images/titleico.png">
       <publishTime>11/17/2016 00:12:52</publishTime>
@@ -215,7 +263,7 @@
       <publishTime>11/17/2016 00:17:03</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>11/27/2016 17:42:46</publishTime>
+      <publishTime>12/03/2016 03:57:10</publishTime>
     </File>
     <File Include="js/A_Login.js">
       <publishTime>11/16/2016 22:38:31</publishTime>
@@ -299,16 +347,16 @@
       <publishTime>11/27/2016 16:14:05</publishTime>
     </File>
     <File Include="News/News_Add.aspx">
-      <publishTime>11/27/2016 16:18:21</publishTime>
+      <publishTime>12/03/2016 03:50:21</publishTime>
     </File>
     <File Include="News/News_List.aspx">
       <publishTime>11/27/2016 16:15:31</publishTime>
     </File>
     <File Include="News/News_Modify.aspx">
-      <publishTime>11/27/2016 16:14:05</publishTime>
+      <publishTime>12/03/2016 03:50:30</publishTime>
     </File>
     <File Include="Other/Banner_List.aspx">
-      <publishTime>11/27/2016 21:44:12</publishTime>
+      <publishTime>12/03/2016 03:21:30</publishTime>
     </File>
     <File Include="Other/Banner_Modify.aspx">
       <publishTime>11/27/2016 20:50:55</publishTime>
@@ -323,16 +371,16 @@
       <publishTime>11/27/2016 19:00:56</publishTime>
     </File>
     <File Include="Other/OnlineMessage_Detail.aspx">
-      <publishTime>11/27/2016 16:14:05</publishTime>
+      <publishTime>12/03/2016 03:31:22</publishTime>
     </File>
     <File Include="Other/OnlineMessage_List.aspx">
-      <publishTime>11/27/2016 16:15:26</publishTime>
+      <publishTime>12/03/2016 03:23:27</publishTime>
     </File>
     <File Include="PictureText/Logo.aspx">
       <publishTime>11/25/2016 23:52:57</publishTime>
     </File>
     <File Include="PictureText/PictureText_Add.aspx">
-      <publishTime>12/03/2016 02:50:10</publishTime>
+      <publishTime>12/03/2016 03:48:51</publishTime>
     </File>
     <File Include="PictureText/PictureText_List.aspx">
       <publishTime>12/03/2016 02:50:01</publishTime>
@@ -344,7 +392,7 @@
       <publishTime>12/03/2016 00:30:09</publishTime>
     </File>
     <File Include="PictureText/PictureText_Modify.aspx">
-      <publishTime>12/03/2016 02:50:30</publishTime>
+      <publishTime>12/03/2016 03:49:04</publishTime>
     </File>
     <File Include="Product/ProductClass1_Add.aspx">
       <publishTime>11/27/2016 16:14:06</publishTime>
@@ -377,16 +425,34 @@
       <publishTime>11/22/2016 23:59:36</publishTime>
     </File>
     <File Include="Product/Product_Add.aspx">
-      <publishTime>11/27/2016 16:17:37</publishTime>
+      <publishTime>12/03/2016 03:51:12</publishTime>
     </File>
     <File Include="Product/Product_List.aspx">
       <publishTime>11/27/2016 16:14:46</publishTime>
     </File>
     <File Include="Product/Product_Modify.aspx">
-      <publishTime>11/27/2016 16:14:05</publishTime>
+      <publishTime>12/03/2016 03:51:23</publishTime>
     </File>
     <File Include="Right.aspx">
       <publishTime>11/19/2016 00:04:40</publishTime>
+    </File>
+    <File Include="Solution/SolutionClass1_Add.aspx">
+      <publishTime>12/04/2016 16:54:54</publishTime>
+    </File>
+    <File Include="Solution/SolutionClass1_List.aspx">
+      <publishTime>12/04/2016 16:54:54</publishTime>
+    </File>
+    <File Include="Solution/SolutionClass1_Modify.aspx">
+      <publishTime>12/04/2016 16:54:55</publishTime>
+    </File>
+    <File Include="Solution/Solution_Add.aspx">
+      <publishTime>12/04/2016 16:54:54</publishTime>
+    </File>
+    <File Include="Solution/Solution_List.aspx">
+      <publishTime>12/04/2016 16:54:54</publishTime>
+    </File>
+    <File Include="Solution/Solution_Modify.aspx">
+      <publishTime>12/04/2016 16:54:54</publishTime>
     </File>
     <File Include="Test.aspx">
       <publishTime>11/25/2016 23:22:20</publishTime>
@@ -881,10 +947,10 @@
       <publishTime>11/22/2016 23:25:29</publishTime>
     </File>
     <File Include="ueditor1_4_3/net/config.json">
-      <publishTime>11/25/2016 01:48:32</publishTime>
+      <publishTime>12/04/2016 23:19:08</publishTime>
     </File>
     <File Include="ueditor1_4_3/net/controller.ashx">
-      <publishTime>11/22/2016 23:25:29</publishTime>
+      <publishTime>12/04/2016 23:10:55</publishTime>
     </File>
     <File Include="ueditor1_4_3/net/net.sln">
       <publishTime>11/22/2016 23:25:29</publishTime>
@@ -1226,7 +1292,7 @@
       <publishTime>11/19/2016 00:04:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/03/2016 02:52:54</publishTime>
+      <publishTime>12/07/2016 22:19:31</publishTime>
     </File>
     <File Include="WebImgUpload/UploadPop1.aspx">
       <publishTime>11/23/2016 01:08:59</publishTime>

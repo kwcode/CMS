@@ -9,7 +9,7 @@
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/layer/layer.js"></script>
     <script src="/js/common.js?v=2"></script>
-    <script src="/js/jquery-uploadpop.js"></script>
+    <script src="/js/jquery-uploadpop.js?v=3"></script>
     <script type="text/javascript">
         $(function () {
             //给图片赋值
@@ -48,8 +48,9 @@
                 <tr>
                     <td class="alignright2">图片：</td>
                     <td>
-                        <img id="img" runat="server" style="width: 100px; height: 100px;" onclick="OpenUploadFile()" />
+                        <img id="img" style="width: 100px; height: 100px;" onclick="OpenUploadFile3()" />
                         <asp:HiddenField runat="server" ID="hide_ImgPath" />
+                        <asp:HiddenField runat="server" ID="hide_ImgID" />
                     </td>
                 </tr>
                 <tr>

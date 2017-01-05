@@ -29,7 +29,8 @@
                     <span class="l-btn-text">删除</span>
                 </a>
             </div>
-            <asp:GridView ID="gv_List" DataKeyNames="ID" CssClass="m-table" runat="server" AutoGenerateColumns="False" Width="100%">
+            <asp:GridView ID="gv_List" DataKeyNames="ID" CssClass="m-table" runat="server" AutoGenerateColumns="False"
+                 Width="100%">
                 <Columns>
                     <asp:TemplateField HeaderText="全选">
                         <ItemStyle HorizontalAlign="Center" Width="50" />
