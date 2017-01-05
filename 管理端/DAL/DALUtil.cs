@@ -196,10 +196,36 @@ namespace DAL
                 return "";
             }
         }
-
+        #region Object转换为Float
+        /// <summary>
+        /// Object转换为Float
+        /// </summary>
+        /// <param name="o">Object</param>
+        /// <returns>int 报错也返回0</returns>
+        public static float ConvertToFloat(object o)
+        {
+            try
+            {
+                float obj = 0;
+                if (o != DBNull.Value && o != null && o.ToString() != String.Empty)
+                {
+                    Single.TryParse(o.ToString(), out obj);
+                }
+                return obj;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        #endregion
 
         #region 转换为可以保持的sql字符串
-
+        /// <summary>
+        /// 单独执行sql语句的时候使用
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
         public static string ConverToSqlTxt(object o)
         {
             try

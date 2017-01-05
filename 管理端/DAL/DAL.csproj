@@ -54,9 +54,11 @@
     <Compile Include="DALUtil.cs" />
     <Compile Include="DomainDAL.cs" />
     <Compile Include="FriendShipDAL.cs" />
+    <Compile Include="NavigationBarDAL.cs" />
     <Compile Include="NewsClass1DAL.cs" />
     <Compile Include="NewsDAL.cs" />
     <Compile Include="OnlineMessageDAL.cs" />
+    <Compile Include="OnlineServicesDAL.cs" />
     <Compile Include="PictureTextClass1DAL.cs" />
     <Compile Include="PictureTextDAL.cs" />
     <Compile Include="ProductClass1DAL.cs" />
@@ -64,9 +66,18 @@
     <Compile Include="ProductClass3DAL.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEODAL.cs" />
     <Compile Include="SolutionClass1DAL.cs" />
     <Compile Include="SolutionDAL.cs" />
     <Compile Include="UserInfoDAL.cs" />
+    <Compile Include="UserInfoExtraDAL.cs" />
+    <Compile Include="UserPictureBookDAL.cs" />
+    <Compile Include="UserPictureDAL.cs" />
+    <Compile Include="UserPictureDetailDAL.cs" />
+    <Compile Include="UserPictureSpecDAL.cs" />
+    <Compile Include="UserWatermarkDAL.cs" />
+    <Compile Include="WebFlowChartsDAL.cs" />
+    <Compile Include="WebFlowTongJiDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\DBCommon\DBCommon.csproj">
