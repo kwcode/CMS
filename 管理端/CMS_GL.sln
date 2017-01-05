@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UICommon", "UICommon\UIComm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCommon", "..\Common\DBCommon\DBCommon.csproj", "{F8DE3697-5EF6-45DC-94D3-A234EB853AD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCommon", "..\Common\LogCommon\LogCommon.csproj", "{ACE25FE8-CDD6-4B31-A53E-17ED009EA79D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{F8DE3697-5EF6-45DC-94D3-A234EB853AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8DE3697-5EF6-45DC-94D3-A234EB853AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8DE3697-5EF6-45DC-94D3-A234EB853AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE25FE8-CDD6-4B31-A53E-17ED009EA79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE25FE8-CDD6-4B31-A53E-17ED009EA79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE25FE8-CDD6-4B31-A53E-17ED009EA79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE25FE8-CDD6-4B31-A53E-17ED009EA79D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
