@@ -34,6 +34,7 @@ namespace Model
         public int ClickRate { get; set; }
         public int ClickLike { get; set; }
         public string TitlePictures { get; set; }
+        public int Picture_ID { get; set; }
         #endregion
 
     }

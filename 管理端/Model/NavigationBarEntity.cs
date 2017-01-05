@@ -23,6 +23,9 @@ namespace Model
         public int ValueNum { get; set; }
         public DateTime CreateTS { get; set; }
 
+        public string SEOTitle { get; set; }
+        public string SEOKeyWords { get; set; }
+        public string SEODescription { get; set; }
         #endregion
 
     }

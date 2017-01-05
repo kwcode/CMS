@@ -15,7 +15,10 @@ namespace Model
         public string LastLoginIp { get; set; }
         public DateTime AddDate { get; set; }
         public string TC_Name { get; set; }
-
+        /// <summary>
+        /// 是否IP统计
+        /// </summary>
+        public int IsIpTongJi { get; set; }
         #endregion
 
         public string LoginName { get; set; }

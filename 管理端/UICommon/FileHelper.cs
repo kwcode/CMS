@@ -141,6 +141,24 @@ namespace UICommon
 
         }
 
+        #region 获取图片字节大小
+        /// <summary>
+        /// 获取图片字节大小,失败返回0
+        /// </summary>
+        /// <param name="ServerPath"></param>
+        /// <returns></returns>
+        public static float GetFileSize(string ServerPath)
+        {
+            try
+            {
+                FileInfo MyFileInfo = new FileInfo(ServerPath);
+                float MyFileSize = (float)MyFileInfo.Length;
+                return MyFileSize;
+
+            }
+            catch { return 0; }
+        }
+        #endregion
 
     }
     /// <summary>
@@ -148,27 +166,28 @@ namespace UICommon
     /// </summary>
     public enum FileNameIndex
     {
-        Authentication = 0,  //身份认证
-        OperatingLicense = 1,  //运营许可证
-        DrivingLicense = 2,  //驾驶证
-        TravelLicense = 3, //行驶证
-        GuideCertification = 4,  //导游认证
-        Cooperation = 5,   //代理合作
-        UploadWorks = 6, //上传作品
-        UploadImg = 7, //上传图片
-        Picture = 8, //用户头像
-        Advertising = 9, //广告横幅的枚举
-        Blogroll = 10, //友情链接的枚举
-        OutlinkImg = 11, //外链图片的自动保存
-        ThemesImg = 12, //主题图片
-        LeaderPhoto = 13, //主题图片
-        ActivityPicture = 14,
-        TempPicture = 99,//临时图片 
-        QRcode = 15,  //二维码
-        HeadThemeBg = 16,         //头部背景图 
-        MenPiaoImg = 17,  //门票图片
-        ContentPictures = 18,//内容图片
-        ThemePictures = 19, //主题图片
-        TitlePictures = 20,//标题图片
+        //Authentication = 0,  //身份认证
+        //OperatingLicense = 1,  //运营许可证
+        //DrivingLicense = 2,  //驾驶证
+        //TravelLicense = 3, //行驶证
+        //GuideCertification = 4,  //导游认证
+        //Cooperation = 5,   //代理合作
+        //UploadWorks = 6, //上传作品
+        //UploadImg = 7, //上传图片
+        Picture = 8, //相册图片
+        //Advertising = 9, //广告横幅的枚举
+        //Blogroll = 10, //友情链接的枚举
+        //OutlinkImg = 11, //外链图片的自动保存
+        //ThemesImg = 12, //主题图片
+        //LeaderPhoto = 13, //主题图片
+        //ActivityPicture = 14,
+        //TempPicture = 99,//临时图片 
+        //QRcode = 15,  //二维码
+        //HeadThemeBg = 16,         //头部背景图 
+        //MenPiaoImg = 17,  //门票图片
+        //ContentPictures = 18,//内容图片
+        //ThemePictures = 19, //主题图片
+        //TitlePictures = 20,//标题图片
+        DelPictures = 77,//临时删除的图片文件夹
     }
 }

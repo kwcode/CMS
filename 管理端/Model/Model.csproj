@@ -56,6 +56,7 @@
     <Compile Include="NewsClass1Entity.cs" />
     <Compile Include="NewsEntity.cs" />
     <Compile Include="OnlineMessageEntity.cs" />
+    <Compile Include="OnlineServicesEntity.cs" />
     <Compile Include="PictureTextClass1Entity.cs" />
     <Compile Include="PictureTextEntity.cs" />
     <Compile Include="ProductEntity.cs" />
@@ -64,9 +65,19 @@
     <Compile Include="ProductClass3Entity.cs" />
     <Compile Include="ProductImagesEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEOEntity.cs" />
     <Compile Include="SolutionClass1Entity.cs" />
     <Compile Include="SolutionEntity.cs" />
+    <Compile Include="SystemPictureSpecEntity.cs" />
     <Compile Include="UserInfoEntity.cs" />
+    <Compile Include="UserInfoExtraEntity.cs" />
+    <Compile Include="UserPictureBookEntity.cs" />
+    <Compile Include="UserPictureDetailEntity.cs" />
+    <Compile Include="UserPictureEntity.cs" />
+    <Compile Include="UserPictureSpecEntity.cs" />
+    <Compile Include="UserWatermarkEntity.cs" />
+    <Compile Include="WebFlowChartsEntity.cs" />
+    <Compile Include="WebFlowTongJiEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
