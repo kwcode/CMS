@@ -22,7 +22,7 @@
         var def = $.Deferred()
         layer.confirm(msg,
             {
-                title: title || "信息",
+                title: title || "信息"
                 // btn: ['确定', '取消'] //按钮
             }, function (index) {
                 def.resolve();
@@ -129,11 +129,28 @@ function replaceAll(_str, _findTxt, _rpTxt) {
     return str;
 }
 /*打开上传图片*/
-function OpenUploadFile() {
-    $.tw.upfile().done(function (result) {
-        var images = result;
-        $("#img").attr("src", images);
-        $("#hide_ImgPath").val(images);
+function OpenUploadFile(UserPictureSpec_ValueNum) {
+    $.tw.upfile({ SrcParm: "?UserPictureSpec_ValueNum=" + UserPictureSpec_ValueNum }).done(function (result) {
+        var picturemodel = JSON.parse(result);
+        $("#img").attr("src", picturemodel.images);
+        $("#hide_ImgPath").val(picturemodel.images);
+        $("#hide_ImgID").val(picturemodel.id);
     });
 }
 
+function OpenUploadFile2() {
+    $.tw.albumpopup().done(function (result) {
+        var picturemodel = result[0];
+        $("#img").attr("src", picturemodel.tn);
+        $("#hide_ImgPath").val(picturemodel.show);
+        $("#hide_ImgID").val(picturemodel.id);
+    });
+}
+function OpenUploadFile3() {
+    $.tw.albumpopup().done(function (result) {
+        var picturemodel = result[0];
+        $("#img").attr("src", picturemodel.tn);
+        $("#hide_ImgPath").val(picturemodel.orig);
+        $("#hide_ImgID").val(picturemodel.id);
+    });
+}
