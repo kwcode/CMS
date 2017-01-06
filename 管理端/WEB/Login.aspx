@@ -50,6 +50,7 @@
                 </p>
             </div>
         </div>
+        <asp:HiddenField runat="server" ID="hideLoginSource" />
     </form>
 </body>
 </html>

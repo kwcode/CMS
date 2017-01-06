@@ -64,6 +64,29 @@
                   }
               } %>
 
+            <li class="nav-info">
+                <div class="nav-header">
+                    <a href="javascript:;" class="ue-clear"><span>网站设置</span>
+                        <i class="icon"></i></a>
+                </div>
+                <ul class="subnav">
+                    <li><a href="javascript:;" date-src="/SEO/Seo_Set.aspx">全局SEO优化</a></li>
+                    <li><a href="javascript:;" date-src="/Nav/NavigationBar_List.aspx">页面与SEO</a></li>
+                    <li><a href="javascript:;" date-src="/SEO/WebFlowTongJi_List.aspx">流量统计</a></li>
+                    <li><a href="javascript:;" date-src="/OS/OS_List.aspx">在线客服</a></li>
+                </ul>
+            </li>
+
+          <%--  <li class="nav-info">
+                <div class="nav-header">
+                    <a href="javascript:;" class="ue-clear"><span>资源库管理</span>
+                        <i class="icon"></i></a>
+                </div>
+                <ul class="subnav">
+                    <li><a href="javascript:;" date-src="/SEO/Seo_Set.aspx">管理文件</a></li>
+                    <li><a href="javascript:;" date-src="/SEO/Seo_Set.aspx">管理文件夹</a></li>
+                </ul>
+            </li>--%>
             <%-- <li class="office current">
                 <div class="nav-header">
                     <a href="javascript:;" class="ue-clear"><span>首页管理</span><i class="icon"></i></a>
@@ -138,12 +161,10 @@
     <div data-options="region:'south',border:false" style="height: 30px;">
         <div id="ft" class="ue-clear">
             <div class="ft-left">
-                <span>项目管理</span>
-                <em>ProjectManagement&nbsp;System</em>
+                <em>后台管理</em>
             </div>
             <div class="ft-right">
-                <span>Automation</span>
-                <em>V1.0&nbsp;2015</em>
+                <em>V2.0&nbsp;2015</em>
             </div>
         </div>
     </div>

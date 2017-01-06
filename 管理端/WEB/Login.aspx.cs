@@ -11,9 +11,19 @@ namespace WEB
 {
     public partial class Login : System.Web.UI.Page
     {
+        private string LoginSource2 = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                //记录UrlReferrer
+                if (Request.UrlReferrer != null)
+                {
+                    string LoginSource = Request.UrlReferrer.OriginalString;
+                    hideLoginSource.Value = LoginSource2 = LoginSource;
+                }
 
+            }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -44,6 +54,7 @@ namespace WEB
                         UserInfoEntity userInfo = DAL.UserInfoDAL.Get_99(userID, "id,TC_Name,UserName,LastLoginTime");
                         userInfo.LoginName = name;
                         Session["UserInfo"] = userInfo;
+                        LoginLog(userInfo);
                         UICommon.ScriptHelper.ShowAndRedirect("登录成功！", "Index.aspx");
                     }
                     else
@@ -68,5 +79,24 @@ namespace WEB
 
             }
         }
+
+        #region 登录日志
+        private void LoginLog(UserInfoEntity userInfo)
+        {
+            try
+            {
+                string IP = UICommon.Util.GetIP();
+                string LoginUrl = Request.Url.OriginalString;
+                string LoginSource = hideLoginSource.Value;
+                string TxtContent = "用户【" + userInfo.UserName + "】,登录网站管理后台。";
+                DAL.UserLoginLogDAL.Add(userInfo.ID, userInfo.UserName, IP, LoginUrl, LoginSource, TxtContent);
+            }
+            catch (Exception ex)
+            {
+                LogCommon.Logs.write("LoginLog", ex.ToString());
+            }
+        }
+
+        #endregion
     }
 }

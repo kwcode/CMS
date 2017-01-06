@@ -131,6 +131,10 @@ namespace WEB.OS
             {
                 Response.Redirect("OS_List.aspx");
             }
+            else
+            {
+                UICommon.ScriptHelper.Alert("修改失败！");
+            }
         }
         protected void btnSaveOnline_Click(object sender, EventArgs e)
         {

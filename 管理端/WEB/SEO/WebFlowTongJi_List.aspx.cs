@@ -35,7 +35,7 @@ namespace WEB.SEO
                 txtTJJsCode.Value = entity.TJJsCode;
                 if (IsIpTongJi == 0)
                 {
-                       btnSave.Text = "开启流量统计";
+                    btnSave.Text = "开启流量统计";
                     txtTJJsCode.Visible = true;
                 }
                 else
@@ -75,7 +75,7 @@ namespace WEB.SEO
         #endregion
 
         protected void btnSave_Click(object sender, EventArgs e)
-        { 
+        {
             Model.UserInfoExtraEntity entity = DAL.UserInfoExtraDAL.Get_99(userInfo.ID, "IsIpTongJi,TJJsCode");
             int IsIpTongJi = UICommon.Util.ConvertToInt32(entity.IsIpTongJi);
             int status = 1;
@@ -91,6 +91,10 @@ namespace WEB.SEO
             if (row_mod > 0)
             {
                 Response.Redirect("WebFlowTongJi_List.aspx");
+            }
+            else
+            {
+                UICommon.ScriptHelper.Alert("修改失败！");
             }
         }
 
