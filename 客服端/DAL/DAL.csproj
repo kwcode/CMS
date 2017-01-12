@@ -42,6 +42,9 @@
   <ItemGroup>
     <Compile Include="DALUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupportDAL.cs" />
+    <Compile Include="SupportGetRecordDAL.cs" />
+    <Compile Include="SupportOperateRecordDAL.cs" />
     <Compile Include="UserInfoDAL.cs" />
     <Compile Include="UserPictureBookDAL.cs" />
     <Compile Include="UserPictureDAL.cs" />

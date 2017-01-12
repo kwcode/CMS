@@ -16,14 +16,15 @@ namespace UICommon
         {
             try
             {
-                if (Session["UserInfo"] == null || Session["UserInfo"].ToString() == "")
-                {
-                    Response.Write("访问时间过长或未登录！");
-                    Response.Write("<script >parent.location.href='/login.aspx';</script>");
-                    Response.End();
-                }
+                //if (Session["UserInfo"] == null || Session["UserInfo"].ToString() == "")
+                //{
+                //    Response.Write("访问时间过长或未登录！");
+                //    Response.Write("<script >parent.location.href='/login.aspx';</script>");
+                //    Response.End();
+                //}
 
-                userInfo = Session["UserInfo"] as UserInfoEntity;
+                //userInfo = Session["UserInfo"] as UserInfoEntity;
+                userInfo = new UserInfoEntity();
             }
             catch (Exception)
             {
