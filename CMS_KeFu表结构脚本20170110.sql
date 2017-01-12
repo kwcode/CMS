@@ -24,3 +24,8 @@ AddTime datetime not null default getdate(),
 TypeID int not null default 0,
 Detail text
 )
+
+alter table Support add
+Status int not null default 0
+alter table SupportGetRecord add
+GetUserID int not null default 0

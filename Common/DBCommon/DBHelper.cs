@@ -475,7 +475,78 @@ namespace DBCommon
             }
         }
 
-
+        /// <summary>
+        /// 执行SQL语句，返回影响的记录数
+        /// </summary>
+        /// <param name="SQLString">SQL语句</param>
+        /// <returns>影响的记录数</returns>
+        public static int ExecuteSql(string connString, string SQLString)
+        {
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        int rows = cmd.ExecuteNonQuery();
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        connection.Close();
+                        throw e;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 执行SQL语句，返回影响的记录数
+        /// </summary>
+        /// <param name="SQLString">SQL语句</param>
+        /// <returns>影响的记录数</returns>
+        public static int ExecuteSql(string connString, string SQLString, params SqlParameter[] cmdParms)
+        {
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    try
+                    {
+                        PrepareCommand(cmd, connection, null, SQLString, cmdParms);
+                        int rows = cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+        private static void PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, string cmdText, SqlParameter[] cmdParms)
+        {
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = cmdText;
+            if (trans != null)
+                cmd.Transaction = trans;
+            cmd.CommandType = CommandType.Text;//cmdType;
+            if (cmdParms != null)
+            {
+                foreach (SqlParameter parameter in cmdParms)
+                {
+                    if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
+                        (parameter.Value == null))
+                    {
+                        parameter.Value = DBNull.Value;
+                    }
+                    cmd.Parameters.Add(parameter);
+                }
+            }
+        }
         #endregion
 
     }
